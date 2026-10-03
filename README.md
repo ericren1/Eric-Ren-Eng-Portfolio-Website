@@ -4,7 +4,7 @@ Personal engineering portfolio showcasing my projects, work experience, and tech
 
 ## Live Site
 
-[View Portfolio](YOUR_CLOUDFLARE_URL)
+[View Portfolio] https://eric-ren-computer-engineer.pages.dev/
 
 ## Made With
 
