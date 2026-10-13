@@ -2,6 +2,14 @@ import ProjectCard from "../components/ProjectCard";
 
 const projects = [
   {
+    title: "Production URL Shortener + Analytics API",
+    type: "BACKEND SYSTEMS",
+    description:
+      "Built a production-style URL shortening API with Spring Boot, PostgreSQL, Redis, and Docker. Implemented Base62 short-code generation, cached redirects, click analytics, rate limiting, validation, collision handling, and Flyway-managed database migrations.",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Redis", "Docker", "Flyway"],
+    github: "https://github.com/ericren1/url-shortener-api",
+  },
+  {
     title: "Traffic Intersection Detection",
     type: "COMPUTER VISION",
     description:
@@ -25,13 +33,13 @@ const projects = [
     tech: ["C", "Python"],
   },
   {
-  title: "Simple GPU",
-  type: "DIGITAL LOGIC / FPGA",
-  description:
-    "Designed a simple GPU architecture in VHDL, including arithmetic and logic components, and implemented the design using Intel Quartus.",
-  tech: ["VHDL", "FPGA", "Quartus", "Digital Logic"],
-  github: "https://github.com/ericren1/Simple-GPU",
-},
+    title: "Simple GPU",
+    type: "DIGITAL LOGIC / FPGA",
+    description:
+      "Designed a simple GPU architecture in VHDL, including arithmetic and logic components, and implemented the design using Intel Quartus.",
+    tech: ["VHDL", "FPGA", "Quartus", "Digital Logic"],
+    github: "https://github.com/ericren1/Simple-GPU",
+  },
   {
     title: "Multimedia Center",
     type: "EMBEDDED SYSTEMS",
@@ -39,7 +47,7 @@ const projects = [
       "Built an embedded multimedia center on an ARM Cortex-M3 microcontroller with an MP3 player, photo gallery, game, and interrupt-driven peripheral interfaces.",
     tech: ["C", "ARM Cortex-M3", "Keil uVision", "FPGA"],
   },
-  
+
 ];
 
 export default function Projects() {
