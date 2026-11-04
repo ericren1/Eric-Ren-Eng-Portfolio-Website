@@ -1,4 +1,4 @@
-{
+﻿{
     "/images/shanghai.jpg":  {
                                  "variants":  [
                                                   {
@@ -145,6 +145,24 @@
                                "width":  2160,
                                "height":  2880
                            },
+    "/images/about me photo.jpg":  {
+                                       "variants":  [
+                                                        {
+                                                            "src":  "/images/optimized/about-me-photo-640.jpg",
+                                                            "width":  640
+                                                        },
+                                                        {
+                                                            "src":  "/images/optimized/about-me-photo-1280.jpg",
+                                                            "width":  1280
+                                                        },
+                                                        {
+                                                            "src":  "/images/optimized/about-me-photo-1920.jpg",
+                                                            "width":  1920
+                                                        }
+                                                    ],
+                                       "width":  2160,
+                                       "height":  2880
+                                   },
     "/images/Work photos/Fall td team lunch.jpg":  {
                                                        "variants":  [
                                                                         {

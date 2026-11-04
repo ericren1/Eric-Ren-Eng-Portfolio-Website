@@ -4,7 +4,7 @@ import Photo from '../components/Photo';
 import SectionHeading from '../components/SectionHeading';
 import { creativeCollections, fitnessStories, offClockBlurbs, travelTrips } from '../data/creative';
 
-const labels = { travel: 'Photography', music: 'Music', fitness: 'Fitness & Sports', business: 'Business' };
+const labels = { travel: 'Photography/Travel', music: 'Music', fitness: 'Fitness & Sports', business: 'Business' };
 function ScatterGallery({ photos, stories = [], className = '', browse = false }) {
   return <div className={'scatter-gallery '+className}>{photos.map((photo,i)=><figure className={'scatter-image scatter-image--'+i} key={photo.src}>
     {stories[i]&&<div className="fitness-blurb"><h4>{stories[i].title}</h4><p>{stories[i].text}</p></div>}
@@ -57,7 +57,7 @@ export default function Creative() {
         }}>{labels[c.slug]}</button>)}
     </div>
     <div id="off-clock-panel" className={'off-clock-panel off-clock-panel--'+active} role="tabpanel" aria-labelledby={'off-clock-tab-'+active} tabIndex="0">
-      {active==='travel'?<TravelPhotography/>:<><div className={'off-clock-blurb off-clock-blurb--'+active}><h3>{active==='music'?'Music & Audio':'Fitness & Sports'}</h3>{active==='music'&&<p>{offClockBlurbs.music}</p>}</div><ScatterGallery key={active} photos={collection.photos} stories={active==='fitness'?fitnessStories:[]} className={'scatter-gallery--'+active}/></>}
+      {active==='travel'?<TravelPhotography/>:<><div className={'off-clock-blurb off-clock-blurb--'+active}><h3>{active==='music'?'Music Production & Audio Engineering':'Fitness & Sports'}</h3>{active==='music'&&offClockBlurbs.music.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div><ScatterGallery key={active} photos={collection.photos} stories={active==='fitness'?fitnessStories:[]} className={'scatter-gallery--'+active}/></>}
     </div>
   </div>;
 }

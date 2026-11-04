@@ -104,7 +104,7 @@ try{
  check('Return from trip restores folders',true);
  await c.wait('document.activeElement.id==="album-eastern-caribbean-2025"');check('Return from album restores keyboard focus',true);
  await c.evaluate('document.querySelector("#off-clock-tab-music").click()');await c.wait('document.querySelector(".off-clock-panel--music")!==null');
- check('Music shows all three photographs and its blurb',await c.evaluate('document.querySelectorAll(".off-clock-panel--music .scatter-image").length===3 && document.querySelector(".off-clock-blurb p").textContent.includes("Renzo On Da Track")'));
+ check('Music shows all three photographs and its blurb',await c.evaluate('document.querySelectorAll(".off-clock-panel--music .scatter-image").length===3 && document.querySelector(".off-clock-blurb p").textContent.includes("gold- and platinum-selling artists")'));
  await c.screenshot('.qa/music-scattered.png');
  await c.evaluate('document.querySelector("#off-clock-tab-music").focus()');await key('ArrowRight',39);await c.wait('document.querySelector("#off-clock-tab-fitness").getAttribute("aria-selected")==="true"');
  check('Fitness has photographs and separate basketball/gym blurbs',await c.evaluate('document.querySelectorAll(".off-clock-panel--fitness .scatter-image").length===2 && [...document.querySelectorAll(".fitness-blurb h4")].map(e=>e.textContent).join(",")==="Basketball,Gym" && [...document.querySelectorAll(".fitness-blurb p")].every(e=>e.textContent.length>80)'));

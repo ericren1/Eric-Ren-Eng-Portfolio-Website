@@ -9,8 +9,8 @@ export const creativeCollections = [
   { slug: 'travel', label: 'Travel & Photography', short: 'Places', number: '01', image: '/images/shanghai.jpg', intro: 'A few places that changed the view. Travel pulls me out of familiar routines and into different ways of living, thinking, and seeing.', photos: travelPhotos },
   { slug: 'music', label: 'Music & Audio', short: 'Sound', number: '02', image: '/images/asfasf.jpg', intro: 'Music production and audio engineering are another way I like to build: listening closely, making small decisions, and shaping something from the ground up.', photos: [
     { src: '/images/asfasf.jpg', alt: 'Music production studio', caption: 'In the studio', shape: 'wide' },
-    { src: '/images/ba1.png', alt: 'User-supplied MUSO.AI 2025 producer chart for Renzo On Da Track', caption: 'MUSO.AI · 2025 producer chart · User-supplied archive', shape: 'tall' },
-    { src: '/images/fasaf.png', alt: 'User-supplied MUSO.AI 2025 production summary for Renzo On Da Track', caption: 'MUSO.AI · 2025 summary · User-supplied archive', shape: 'tall' },
+    { src: '/images/ba1.png', alt: 'User-supplied MUSO.AI 2025 producer chart', caption: 'MUSO.AI · 2025 producer chart · User-supplied archive', shape: 'tall' },
+    { src: '/images/fasaf.png', alt: 'User-supplied MUSO.AI 2025 production summary', caption: 'MUSO.AI · 2025 summary · User-supplied archive', shape: 'tall' },
   ] },
   { slug: 'fitness', label: 'Fitness & Sports', short: 'Movement', number: '03', image: '/images/hoops.jpg', intro: 'The work you come back to. Basketball and consistent training have taught me about teamwork, discipline, and the value of showing up.', photos: [
     { src: '/images/hoops.jpg', alt: 'Basketball photograph from the personal sports archive', caption: 'On the court', shape: 'wide' },
@@ -29,10 +29,10 @@ export const travelTrips = [
 
 // These blurbs are the editable introductions for the scrollable personal galleries.
 export const offClockBlurbs = {
-  music: 'I produce and engineer music as Renzo On Da Track. I enjoy the process of listening closely, shaping a sound, and building a track one decision at a time. Here’s a look inside the studio and a few pieces from my production archive.',
+  music: ["I produce music and work as an audio engineer, with experience recording, mixing, and mastering artists in professional studios. I've worked with gold- and platinum-selling artists and built an online music production business that generated over 200,000 impressions and $20,000 in revenue.","Music has been one of my biggest creative outlets, and I enjoy everything from developing an idea into a finished track to helping artists bring their sound to life."],
 };
 
 export const fitnessStories = [
-  { title: 'Basketball', text: 'Basketball gives me a different kind of challenge: reading the game, trusting the people around me, and staying present. I enjoy the teamwork and the chance to keep improving every time I step onto the court.' },
-  { title: 'Gym', text: 'Strength training is a steady part of my routine. I like the process of showing up, putting in the work, and making progress over time. It’s a place to reset and practice consistency outside of engineering.' },
+  { title: 'Basketball', text: "I played competitive OBA basketball throughout high school, and the sport played a big role in shaping who I am today. It taught me teamwork, perseverance, communication, and confidence, both on and off the court. Basketball is still something I love, whether I'm competing, improving my game, or just playing with friends." },
+  { title: 'Gym', text: "The gym has taught me that you get out what you put in. Progress comes from showing up consistently, putting in the work, and building on small improvements day after day. It's taught me discipline, patience, and the importance of trusting the process, lessons that carry over into everything else I do." },
 ];
