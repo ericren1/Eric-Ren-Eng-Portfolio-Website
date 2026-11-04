@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eric-ren-computer-engineer.pages.dev/sitemap.xml

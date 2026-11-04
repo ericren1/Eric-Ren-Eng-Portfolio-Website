@@ -1,0 +1,200 @@
+{
+    "/images/shanghai.jpg":  {
+                                 "variants":  [
+                                                  {
+                                                      "src":  "/images/optimized/shanghai-640.jpg",
+                                                      "width":  640
+                                                  },
+                                                  {
+                                                      "src":  "/images/optimized/shanghai-1280.jpg",
+                                                      "width":  1280
+                                                  },
+                                                  {
+                                                      "src":  "/images/optimized/shanghai-1920.jpg",
+                                                      "width":  1920
+                                                  }
+                                              ],
+                                 "width":  2160,
+                                 "height":  3840
+                             },
+    "/images/Work photos/Summer td mentoring conference.jpg":  {
+                                                                   "variants":  [
+                                                                                    {
+                                                                                        "src":  "/images/optimized/work-photos-summer-td-mentoring-conference-640.jpg",
+                                                                                        "width":  640
+                                                                                    },
+                                                                                    {
+                                                                                        "src":  "/images/optimized/work-photos-summer-td-mentoring-conference-1280.jpg",
+                                                                                        "width":  1280
+                                                                                    }
+                                                                                ],
+                                                                   "width":  1600,
+                                                                   "height":  1200
+                                                               },
+    "/images/gym.jpg":  {
+                            "variants":  [
+                                             {
+                                                 "src":  "/images/optimized/gym-640.jpg",
+                                                 "width":  640
+                                             },
+                                             {
+                                                 "src":  "/images/optimized/gym-1280.jpg",
+                                                 "width":  1280
+                                             },
+                                             {
+                                                 "src":  "/images/optimized/gym-1920.jpg",
+                                                 "width":  1920
+                                             }
+                                         ],
+                            "width":  2160,
+                            "height":  2880
+                        },
+    "/images/Work photos/Fall TD speed mentoring.jpg":  {
+                                                            "variants":  [
+                                                                             {
+                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-640.jpg",
+                                                                                 "width":  640
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-1280.jpg",
+                                                                                 "width":  1280
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-1920.jpg",
+                                                                                 "width":  1920
+                                                                             }
+                                                                         ],
+                                                            "width":  1920,
+                                                            "height":  673
+                                                        },
+    "/images/Yodaguy museum.jpg":  {
+                                       "variants":  [
+                                                        {
+                                                            "src":  "/images/optimized/yodaguy-museum-640.jpg",
+                                                            "width":  640
+                                                        },
+                                                        {
+                                                            "src":  "/images/optimized/yodaguy-museum-1280.jpg",
+                                                            "width":  1280
+                                                        },
+                                                        {
+                                                            "src":  "/images/optimized/yodaguy-museum-1920.jpg",
+                                                            "width":  1920
+                                                        }
+                                                    ],
+                                       "width":  2160,
+                                       "height":  2880
+                                   },
+    "/images/asfasf.jpg":  {
+                               "variants":  [
+                                                {
+                                                    "src":  "/images/optimized/asfasf-640.jpg",
+                                                    "width":  640
+                                                },
+                                                {
+                                                    "src":  "/images/optimized/asfasf-1280.jpg",
+                                                    "width":  1280
+                                                },
+                                                {
+                                                    "src":  "/images/optimized/asfasf-1920.jpg",
+                                                    "width":  1920
+                                                }
+                                            ],
+                               "width":  2880,
+                               "height":  2160
+                           },
+    "/images/fasaf.png":  {
+                              "variants":  [
+                                               {
+                                                   "src":  "/images/optimized/fasaf-640.jpg",
+                                                   "width":  640
+                                               }
+                                           ],
+                              "width":  1080,
+                              "height":  1352
+                          },
+    "/images/hoops.jpg":  {
+                              "variants":  [
+                                               {
+                                                   "src":  "/images/optimized/hoops-640.jpg",
+                                                   "width":  640
+                                               },
+                                               {
+                                                   "src":  "/images/optimized/hoops-1280.jpg",
+                                                   "width":  1280
+                                               }
+                                           ],
+                              "width":  1293,
+                              "height":  1940
+                          },
+    "/images/cruise.jpg":  {
+                               "variants":  [
+                                                {
+                                                    "src":  "/images/optimized/cruise-640.jpg",
+                                                    "width":  640
+                                                },
+                                                {
+                                                    "src":  "/images/optimized/cruise-1280.jpg",
+                                                    "width":  1280
+                                                },
+                                                {
+                                                    "src":  "/images/optimized/cruise-1920.jpg",
+                                                    "width":  1920
+                                                }
+                                            ],
+                               "width":  2160,
+                               "height":  2880
+                           },
+    "/images/Work photos/Fall td team lunch.jpg":  {
+                                                       "variants":  [
+                                                                        {
+                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-640.jpg",
+                                                                            "width":  640
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-1280.jpg",
+                                                                            "width":  1280
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-1920.jpg",
+                                                                            "width":  1920
+                                                                        }
+                                                                    ],
+                                                       "width":  3072,
+                                                       "height":  4080
+                                                   },
+    "/images/ba1.png":  {
+                            "variants":  [
+                                             {
+                                                 "src":  "/images/optimized/ba1-640.jpg",
+                                                 "width":  640
+                                             }
+                                         ],
+                            "width":  1080,
+                            "height":  1352
+                        },
+    "/images/mexico.jpg":  {
+                               "variants":  [
+                                                {
+                                                    "src":  "/images/optimized/mexico-640.jpg",
+                                                    "width":  640
+                                                }
+                                            ],
+                               "width":  1240,
+                               "height":  2202
+                           },
+    "/images/Miami.jpg":  {
+                              "variants":  [
+                                               {
+                                                   "src":  "/images/optimized/miami-640.jpg",
+                                                   "width":  640
+                                               },
+                                               {
+                                                   "src":  "/images/optimized/miami-1280.jpg",
+                                                   "width":  1280
+                                               }
+                                           ],
+                              "width":  1536,
+                              "height":  2048
+                          }
+}

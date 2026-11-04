@@ -1,74 +1,9 @@
-import { Link } from "react-router-dom";
-
+import { profile } from '../data/profile';
+import HomeCollage from '../components/HomeCollage';
 export default function Home() {
-  return (
-    <>
-      <section className="home-hero container">
-        <p className="eyebrow">COMPUTER ENGINEERING · SOFTWARE ENGINEERING</p>
-
-        <h1>
-          Eric Ren
-          <span>Computer Engineer.</span>
-        </h1>
-
-        <p className="home-intro">
-          I’m a Computer Engineering student at Toronto Metropolitan University
-          with experience building software across financial technology,
-          full-stack development, backend systems, AI, and computer vision.
-        </p>
-
-        <div className="hero-actions">
-          <a
-            className="button primary"
-            href="https://github.com/ericren1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub ↗
-          </a>
-
-          <a
-            className="button secondary"
-            href="https://linkedin.com/in/ericren1/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn ↗
-          </a>
-        </div>
-      </section>
-
-      <section className="home-paths container">
-
-      <Link to="/experience" className="path-row">
-          <div>
-            <p className="eyebrow">01 · EXPERIENCE</p>
-            <h2>Where I’ve worked.</h2>
-          </div>
-          <p>Software and technical experience across finance, healthcare, and web development.</p>
-          <span className="path-arrow">→</span>
-        </Link>
-
-        <Link to="/projects" className="path-row">
-          <div>
-            <p className="eyebrow">02 · PROJECTS</p>
-            <h2>Things I’ve built.</h2>
-          </div>
-          <p>Software, embedded systems, computer vision, and engineering projects.</p>
-          <span className="path-arrow">→</span>
-        </Link>
-
-        
-
-        <Link to="/about" className="path-row">
-          <div>
-            <p className="eyebrow">03 · ABOUT ME</p>
-            <h2>Fun Facts.</h2>
-          </div>
-          <p>Interesting things about me.</p>
-          <span className="path-arrow">→</span>
-        </Link>
-      </section>
-    </>
-  );
+  return <div className="home-hero wrap"><div className="home-layout"><div className="home-copy">
+    <h1 className="hero-name" id="home-heading">Eric Ren<span className="name-period">.</span></h1>
+    <p className="hero-role"><span>Computer Engineering student</span><em>Software engineer.</em></p>
+    <div className="home-quick-intro"><p>I'm a Computer Engineering student at Toronto Metropolitan University who enjoys building useful software, solving challenging problems, and turning ideas into real products.</p><div className="home-socials"><a href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></div><a className="home-email" href={profile.contact}>{profile.email}</a></div>
+  </div><HomeCollage /></div></div>;
 }
