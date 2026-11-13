@@ -16,7 +16,7 @@ export const experiences = [
       "Redesigned the React frontend to support reconciliation workflows, transaction statuses, comments, and reporting.",
       "Built Java Spring Boot REST APIs and Oracle database schemas to persist reconciliation data and connect backend services with frontend workflows.",
       "Worked on reconciliation status management and user interactions, with audit logging and traceability requirements informing the system design.",
-      "Contributed to a proof of concept projected to reduce reconciliation turnaround from approximately one week to one day and save $200,000 annually. These are projections, not measured production results."
+      "Contributed to a proof of concept projected to reduce reconciliation turnaround from approximately one week to one day and save $200,000 annually."
     ],
     "context": "A proof of concept exploring an internally developed alternative to a legacy vendor reconciliation process. The goal is to bring transaction review, exceptions, and outcomes into one interface.",
     "contribution": "Full-stack development across React workflows and Java / Spring Boot APIs. My work supports transaction statuses, unmatched-item investigation, exception management, comments, and reporting.",
@@ -49,7 +49,7 @@ export const experiences = [
     "company": "Romaeris Corporation",
     "short": "R",
     "role": "Robotics Software Engineering Intern",
-    "team": "Part-time · Remote",
+    "team": "UAV Collision Avoidance Team",
     "period": "October — December 2026",
     "current": true,
     "summary": "Exploring visual tracking for UAV collision avoidance.",

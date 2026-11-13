@@ -1,52 +1,40 @@
-# Eric Ren — Engineering & Off the Clock
+# Eric Ren / Engineering & elsewhere
 
-A black, single-page engineering portfolio with persistent section navigation, open editorial layouts, and personal photo collections.
+A React 18 + Vite portfolio with a compact editorial homepage, dedicated engineering pages, and a living photographic contact sheet. Default bone / charcoal light theme, with a persistent dark theme.
 
-## Development
+## Run
 
-```sh
-npm install
-npm run dev
-npm run build
-npm run preview
-npm test
-```
+- npm install
+- npm run dev
+- npm run build
+- npm test
+- npm run preview -- --host 127.0.0.1
+- npm run test:browser (requires an isolated Chrome DevTools endpoint on localhost:9222)
 
-Deploy `dist/` to Cloudflare Pages. These changes have not been deployed.
+## Content and routes
 
-## Content and assets
+- /: compact introduction, company/project links, social profiles, interactive collage.
+- /experience: company index.
+- /experience/td-securities: all three TD internships, original bullets, technologies, engineering notes, and supplied work photographs.
+- /experience/romaeris, /experience/ldrs, /experience/unity-health: existing role content.
+- /projects/url-shortener, /projects/ai-personal-scheduler, /projects/ai-exercise-form-tracker: featured detail pages using the existing project write-ups.
+- /more-projects: planned AI agents and earlier projects, with concise scope and technologies. No individual links or demo buttons.
+- /more-about-me: the existing Off the Clock photography/travel albums, music, and sports content. Business remains disabled.
 
-- `src/components/Navbar.jsx`: sticky navigation and the er. home link.
-- `src/pages/Home.jsx`: smaller name, asymmetric role subtitle, social links, visible email, and an interactive moving photo collage.
-- `src/components/HomeCollage.jsx` and `src/data/homeCollage.js`: curated archive photos, varied placements, slow drift, hover/focus stacking, pause/play, and reduced-motion handling. Images open the shared viewer.
-- `src/pages/About.jsx`: biography and compact Tech Stack. Education and the portrait caption are removed.
-- `src/data/profile.js`: public contact details and the Languages / Frameworks / Tools groups.
-- `src/data/experience.js` and `src/data/workPhotos.js`: roles, bullets, and real work photos. Fall TD uses the team lunch and speed-mentoring photographs; summer TD includes the mentoring conference. A summer and a fall photo also appear in the moving homepage collage.
-- `src/data/companyLogos.js`: matches supplied TD and Romaeris logos to their company names. LDRS and unknown companies use the supplied `public/images/Logos/no logo.jpg`. Unity Health Toronto’s supplied logo is reserved for an exact company match. Logos remain non-interactive.
-- `src/data/projects.js`: factual project content and optional imagery.
-- `src/data/creative.js`: trip folders and their photo arrays, music/fitness images, editable music `offClockBlurbs`, separate Basketball/Gym `fitnessStories`, and the disabled Business collection.
-- `src/components/ImageViewer.jsx`: shared enlarged-photo overlay with a translucent backdrop, close button, Escape, outside-click dismissal, and gallery arrow controls.
-- `src/components/Photo.jsx`: responsive images with enlargement by default. Album covers open their album directly and have no Enlarge action.
-- `src/styles.css`: responsive typography, black surfaces, underlined section headings, and scattered layouts.
+Role data stays in src/data/experience.js, project data in src/data/projects.js, and personal galleries in src/data/creative.js. Original assets remain in public/images. Old single-page components and stylesheet are retained but no longer used by the application entry point.
 
-Trip folders: **China — Aug ’26**, **F1 Miami — ’25**, **Eastern Caribbean — ’25**, and **Mexico, Cancun — ’23**. Add real trip images to the corresponding `travelTrips[].photos` arrays. Existing individual photo captions are retained; the Mexico folder’s supplied image is captioned Tulum.
+## Living contact sheet
 
-Album covers layer the first available photographs with slight rotations. Albums with fewer than three photos repeat their existing cover as decorative background prints; displayed photo counts remain accurate. Hover or keyboard focus darkens the stack and reveals Open album. The removed Travel Photographs heading and introduction are not shown. Opening an album displays its own name and an All albums return link.
+src/data/contactSheet.js controls count (default 25), pinned images, exclusions, and explicit ordering. The current archive has 12 distinct photographic assets, so it adapts without duplicates. Album/season dates are recorded explicitly. The fall team-lunch photo has EXIF DateTimeOriginal 2026:10:08 13:53:17. Undated photographs remain undated and use curated ordering; filesystem modification time is never used as capture time.
 
-The music and fitness panels show all photos in scrollable, irregular compositions. Music copy is editable in `offClockBlurbs`; Basketball and Gym each have their own entry in `fitnessStories`. Business is a greyed-out, disabled tab and cannot be opened by clicking, keyboard navigation, or direct links. No visitor-facing editor or CMS is added.
+src/components/HomeCollage.jsx owns the stable canvas, explicit transform endpoints, diagonal-wave assembly, interruptions/reversal, and touch behavior. Desktop hover or keyboard focus assembles inward. The homepage is centered; three photographs roam behind the copy on desktop, and the remaining photographs use wider floating paths. They brighten on hover and support mouse dragging or arrow-key positioning. All return to the right-hand contact sheet. Mobile keeps the motion contained. On touch, the first tap assembles and the next opens More About Me. Reduced motion uses a static contact sheet. The separate pause control stops floating motion.
 
-The footer is a compact identity/link bar, with Toronto next to Eric Ren and email next to GitHub. The large contact invitation has been removed.
+## Visual system
 
-Original images stay in `public/images/`. The optimizer includes root-level personal images and the `Work photos` folder, preserving originals. Company logos stay in their supplied format. Regenerate responsive variants on Windows:
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/optimize-images.ps1
-```
+src/editorial.css is the active stylesheet. Instrument Sans and Caveat are hosted locally in public/fonts with their OFL licenses. Theme selection uses the portfolio-theme localStorage key.
 
 ## Verification
 
-`npm run test:browser` expects a preview at `http://127.0.0.1:4173` (override with `QA_URL`) and an isolated Chrome profile exposing CDP on port 9222. It checks four viewport sizes, sticky navigation, headings, photo overlays, gallery controls, trip folders, typography/content changes, and legacy URL recovery. Results and screenshots are in ignored `.qa/`.
+npm test checks content boundaries, benchmarks, and image assets. scripts/verify-editorial.mjs checks responsive layouts, routes, real photo preservation, animation choreography/reversal, keyboard focus, touch interaction, theme persistence, and the reused album viewer. Reports and screenshots are saved under ignored .qa/.
 
-`npm test` validates benchmark evidence and content/asset boundaries. Oxlint is reused from the adjacent scheduler checkout; no new dependencies were added.
-
-See [content audit](docs/CONTENT-AUDIT.md) for factual provenance and [revision notes](docs/REDESIGN.md) for current behavior.
+This checkout is the local implementation. No hosting registration, source push, or deployment was performed for this redesign.

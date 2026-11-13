@@ -1,0 +1,120 @@
+import assert from 'node:assert/strict';
+import { writeFile } from 'node:fs/promises';
+import { connect } from './cdp.mjs';
+const c=await connect();
+const base='http://127.0.0.1:4173';
+const checks=[];
+const check=(name,value)=>{assert.ok(value,name);checks.push(name);};
+const delay=ms=>c.evaluate('new Promise(resolve=>setTimeout(resolve,'+ms+'))');
+const key=async key=>{const code={Escape:27,Enter:13,ArrowRight:39}[key];await c.send('Input.dispatchKeyEvent',{type:'keyDown',key,code:key,windowsVirtualKeyCode:code,nativeVirtualKeyCode:code});await c.send('Input.dispatchKeyEvent',{type:'keyUp',key,code:key,windowsVirtualKeyCode:code,nativeVirtualKeyCode:code});};
+const point=async selector=>c.evaluate('(()=>{const r=document.querySelector('+JSON.stringify(selector)+').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()');
+try{
+ await c.send('Runtime.enable');
+ await c.send('Log.enable');
+ await c.navigate(base);
+ await c.evaluate('localStorage.clear();location.reload()');
+ await c.wait('!!document.querySelector(".contact-canvas")');
+ for(const [width,height] of [[1440,900],[1200,630],[1024,768],[768,1024],[390,844],[320,800]]){
+  await c.viewport(width,height);await c.navigate(base);await delay(180);
+  check('No homepage overflow '+width,await c.evaluate('document.documentElement.scrollWidth<=innerWidth+1'));
+  await c.wait('[...document.querySelectorAll(".contact-frame img")].every(i=>i.complete&&i.naturalWidth>0)');
+  check('All photo assets loaded '+width,await c.evaluate('[...document.querySelectorAll(".contact-frame img")].every(i=>i.complete&&i.naturalWidth>0)'));
+  check('Compact home with 12 distinct photos '+width,await c.evaluate('document.querySelectorAll(".contact-tile").length===12 && new Set([...document.querySelectorAll(".contact-tile img")].map(i=>i.src)).size===12'));
+  check('No full-width professional sections '+width,await c.evaluate('!document.querySelector(".role-detail,.secondary-project") && document.querySelectorAll(".index-section").length===2'));
+  if(width>=1024)check('Home fits one viewport '+width,await c.evaluate('document.documentElement.scrollHeight<=innerHeight+2'));
+  await c.screenshot('.qa/editorial-home-'+width+'.png');
+ }
+ await c.viewport(1440,900);await c.navigate(base);await delay(120);
+
+ check('Single cursive home signature',await c.evaluate('document.querySelectorAll(".signature").length===1 && !document.querySelector(".editorial-header .signature")'));
+ check('Theme toggle in top-right header',await c.evaluate('!!document.querySelector(".editorial-header .theme-toggle") && !document.querySelector(".intro-heading .theme-toggle")'));
+ const roamRect=await c.evaluate('document.querySelector(".contact-tile--roaming .contact-frame").getBoundingClientRect().toJSON()');
+ const grab={x:roamRect.x+roamRect.width/2,y:roamRect.y+roamRect.height/2};
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',...grab});
+ await c.wait('getComputedStyle(document.querySelector(".contact-tile--roaming")).opacity==="1"');
+ check('Roaming photograph restores full color on hover',true);
+ await c.send('Input.dispatchMouseEvent',{type:'mousePressed',...grab,button:'left',clickCount:1});
+ const dragBefore=await c.evaluate('new DOMMatrix(document.querySelector(".contact-tile--roaming").style.transform).e');
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:grab.x+90,y:grab.y+50,button:'left',buttons:1});
+ await c.send('Input.dispatchMouseEvent',{type:'mouseReleased',x:grab.x+90,y:grab.y+50,button:'left',clickCount:1});
+ check('Mouse drag moves the photograph without navigation',await c.evaluate('new DOMMatrix(document.querySelector(".contact-tile--roaming").style.transform).e')>dragBefore+70 && await c.evaluate('location.pathname==="/"'));
+ const resumedBefore=await c.evaluate('getComputedStyle(document.querySelector(".contact-tile--roaming .contact-drift")).transform');
+ await delay(500);
+ check('Dropped photograph resumes drifting',resumedBefore!==await c.evaluate('getComputedStyle(document.querySelector(".contact-tile--roaming .contact-drift")).transform'));
+ check('Light-mode bio is black',await c.evaluate('getComputedStyle(document.querySelector(".introduction > p:last-child")).color==="rgb(0, 0, 0)"'));
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:20,y:20});
+ const scattered=await c.evaluate('[...document.querySelectorAll(".contact-tile")].map(e=>getComputedStyle(e).transform)');
+ const boardPoint=await point('.contact-canvas');
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',...boardPoint});
+ await delay(180);
+ check('Sequential assembly begins before overlay',await c.evaluate('document.querySelector(".is-assembled")!==null && !document.querySelector(".is-ready")'));
+ const early=await c.evaluate('[...document.querySelectorAll(".contact-tile")].map(e=>getComputedStyle(e).transform)');
+ check('Photos travel rather than just straighten',scattered.some((value,index)=>value!==early[index]));
+ await c.wait('document.querySelector(".is-ready")!==null');
+ await delay(40);
+ check('Contact sheet is compact and upright',await c.evaluate('(()=>{const b=document.querySelector(".contact-canvas").getBoundingClientRect();const rs=[...document.querySelectorAll(".contact-tile")].map(e=>e.getBoundingClientRect());return Math.max(...rs.map(r=>r.right))-Math.min(...rs.map(r=>r.left))<b.width*.65 && rs.every(r=>Math.abs(r.width-r.height)<.1)})()'));
+ await c.screenshot('.qa/editorial-contact-sheet.png');
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:20,y:20});await delay(220);
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',...boardPoint});await delay(150);
+ await c.send('Input.dispatchMouseEvent',{type:'mouseMoved',x:20,y:20});await delay(1500);
+ check('Interrupted reversal restores floating state',await c.evaluate('!document.querySelector(".is-assembled,.is-ready")'));
+ await c.evaluate('document.querySelector(".contact-canvas").focus()');await c.wait('!!document.querySelector(".is-ready")');
+ check('Keyboard focus assembles collage',true);
+ await c.evaluate('document.querySelector(".contact-canvas").click()');await c.wait('location.pathname==="/more-about-me"');
+ check('Collage opens existing personal gallery',await c.evaluate('document.querySelectorAll(".trip-folder").length===4'));
+ for(const width of [1440,390,320]){
+  await c.viewport(width,900);
+  for(const tab of ['travel','music','fitness']){
+   await c.evaluate('document.querySelector("#off-clock-tab-'+tab+'").click()');await delay(80);
+   check('Personal gallery responsive '+tab+' '+width,await c.evaluate('document.documentElement.scrollWidth<=innerWidth+1'));
+  }
+ }
+ await c.evaluate('document.querySelector("#off-clock-tab-music").click()');
+ check('Music images and supplied achievements preserved',await c.evaluate('document.querySelectorAll(".scatter-image").length===3 && document.querySelector(".off-clock-blurb").textContent.includes("$20,000")'));
+ await c.evaluate('document.querySelector(".zoom-photo").click()');await c.wait('document.querySelector(".image-viewer").open');
+ check('Personal photo viewer works',await c.evaluate('!document.querySelector(".image-viewer-footer button")'));
+ await key('Escape');await c.wait('!document.querySelector(".image-viewer").open && !document.querySelector(".image-viewer-panel")');
+ await c.evaluate('document.querySelector("#off-clock-tab-travel").click()');
+ await c.wait('!!document.querySelector("#album-eastern-caribbean-2025")');
+ await c.evaluate('document.querySelector("#album-eastern-caribbean-2025").click()');
+ await c.wait('!!document.querySelector(".trip-gallery .zoom-photo")');
+ await c.evaluate('document.querySelector(".trip-gallery .zoom-photo").click()');await c.wait('document.querySelector(".image-viewer").open');
+ check('Photography albums retain browsing',await c.evaluate('document.querySelectorAll(".image-viewer-footer button").length===2'));
+ await key('Escape');await c.wait('!document.querySelector(".image-viewer").open && !document.querySelector(".image-viewer-panel")');
+ for(const [route,heading] of [['/experience/td-securities','TD Securities'],['/experience/romaeris','Romaeris Corporation'],['/experience/ldrs','LDRS Investments'],['/experience/unity-health','Unity Health Toronto'],['/projects/url-shortener','URL Shortener'],['/projects/ai-personal-scheduler','AI Personal Scheduler'],['/projects/ai-exercise-form-tracker','AI Exercise Form Tracker'],['/more-projects','More Projects']]){
+  await c.navigate(base+route);
+  check('Dedicated detail route '+route,await c.evaluate('document.querySelector("h1").textContent.includes('+JSON.stringify(heading)+')'));
+  check('Detail responsive '+route,await c.evaluate('document.documentElement.scrollWidth<=innerWidth+1'));
+ }
+ check('Secondary projects have no per-project links or demos',await c.evaluate('document.querySelectorAll(".secondary-project").length===5 && !document.querySelector(".secondary-project a,.secondary-project button,.project-demo")'));
+ await c.navigate(base+'/experience/td-securities');
+ check('All three TD internships and original bullets reused',await c.evaluate('document.querySelectorAll(".role-detail").length===3 && document.body.textContent.includes("237%") && document.body.textContent.includes("$200,000")'));
+ await c.viewport(1440,1000);await c.screenshot('.qa/editorial-td.png',true);
+ await c.navigate(base);
+ await c.evaluate('document.querySelector(".theme-toggle").click()');
+ check('Dark mode toggle',await c.evaluate('document.documentElement.dataset.theme==="dark"'));
+ await c.navigate(base+'/projects/url-shortener');
+ check('Theme persists between routes',await c.evaluate('document.documentElement.dataset.theme==="dark"'));
+ await c.navigate(base);await c.screenshot('.qa/editorial-dark.png');
+ await c.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+ await c.wait('!!document.querySelector(".is-ready")');
+ check('Reduced motion uses an organized static sheet',await c.evaluate('getComputedStyle(document.querySelector(".contact-drift")).animationName==="none"'));
+ await c.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
+ await c.viewport(390,844);
+ await c.send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
+ await c.evaluate('document.querySelector(".signature").focus();document.activeElement.blur()');
+ await delay(1500);
+ const tap=await point('.contact-canvas');
+ await c.evaluate('document.querySelector(".contact-canvas").scrollIntoView({block:"center",behavior:"instant"})');
+ const touchPoint=await point('.contact-canvas');
+ await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touchPoint]});await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ await c.wait('!!document.querySelector(".is-ready")');
+ check('First mobile tap assembles without navigating',await c.evaluate('location.pathname==="/"'));
+ await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[touchPoint]});await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+ await c.wait('location.pathname==="/more-about-me"');
+ check('Second mobile tap opens More About Me',true);
+ const errors=c.events.filter(e=>e.method==='Runtime.exceptionThrown'||e.method==='Log.entryAdded'&&e.params.entry.level==='error');
+ check('No browser runtime errors',errors.length===0);
+ await writeFile('.qa/editorial-report.json',JSON.stringify({checks,errors},null,2));
+ console.log('PASS: '+checks.length+' editorial layout, routing, theme, accessibility, and animation checks.');
+}finally{await c.close();}
