@@ -6,7 +6,8 @@ import { experiences } from '../data/experience';
 import { projects, otherProjects } from '../data/projects';
 
 export const featuredSlugs=['url-shortener','ai-personal-scheduler','ai-exercise-form-tracker'];
-export const companySlugs={'td-securities':'TD Securities',romaeris:'Romaeris Corporation',ldrs:'LDRS Investments','unity-health':'Unity Health Toronto'};
+export const companySlugs={'td-securities':'TD Securities',romaeris:'Romaeris Corporation',ldrs:'LDRS Investments'};
+const companyWebsites={'td-securities':'https://www.tdsecurities.com/ca/en',romaeris:'https://romaeris.com/'};
 function Arrow(){return <span aria-hidden="true">&#8599;</span>;}
 function Stack({items,label='Technologies'}){return <div className="detail-stack"><span className="eyebrow">{label}</span><p>{items.join(' / ')}</p></div>;}
 function Back({to='/',children='Home'}){return <Link className="back-link" to={to}>&larr; {children}</Link>;}
@@ -16,7 +17,7 @@ export function EditorialHome({themeControl}){
    <section className="introduction"><div className="intro-heading"><h1><Link className="signature" to="/" aria-label="Eric Ren, home">Eric Ren</Link></h1>{themeControl}</div><p className="degree">Computer Engineering @ TMU</p><p>I like building useful software, exploring AI, and making things of my own. Away from the screen, you&rsquo;ll find me making music, traveling, or getting a workout in.</p></section>
    <section className="index-section" aria-labelledby="index-experience"><h2 id="index-experience">Experience</h2><div className="index-links">
     {Object.entries(companySlugs).slice(0,3).map(([slug,name])=><Link to={'/experience/'+slug} key={slug}>{name}<Arrow/></Link>)}
-   </div></section>
+   </div><Link className="all-experience" to="/experience">All experience <Arrow/></Link></section>
    <section className="index-section" aria-labelledby="index-projects"><h2 id="index-projects">Projects</h2><div className="index-links">{featuredSlugs.map(slug=>{const project=projects.find(p=>p.slug===slug);return <Link key={slug} to={'/projects/'+slug}>{slug==='url-shortener'?'URL Shortener & Analytics':project.title}<Arrow/></Link>;})}<Link to="/more-projects">More Projects<Arrow/></Link></div></section>
  </div><HomeCollage/></div>;
 }
@@ -36,7 +37,7 @@ export function CompanyExperience(){
  const company=companySlugs[companySlug];
  const jobs=experiences.filter(job=>job.company===company);
  if(!company)return <NotFound/>;
- return <div className="reading-page company-page"><Back to="/experience">Experience</Back><header className="page-intro company-title"><CompanyLogo company={company}/><div><span className="eyebrow">Experience</span><h1>{company}</h1></div></header>{jobs.map(job=><JobDetail job={job} key={job.id}/>)}</div>;
+ return <div className="reading-page company-page"><Back to="/experience">Experience</Back><header className="page-intro company-title"><CompanyLogo company={company}/><div><span className="eyebrow">Experience</span><h1>{company}</h1>{companyWebsites[companySlug]&&<a className="text-link company-website" href={companyWebsites[companySlug]} target="_blank" rel="noreferrer">Company website <Arrow/></a>}</div></header>{jobs.map(job=><JobDetail job={job} key={job.id}/>)}</div>;
 }
 export function FeaturedProject(){
  const {projectSlug}=useParams();

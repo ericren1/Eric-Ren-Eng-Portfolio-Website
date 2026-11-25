@@ -1,19 +1,32 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import Photo from '../components/Photo';
 import SectionHeading from '../components/SectionHeading';
-import { creativeCollections, fitnessStories, offClockBlurbs, travelTrips } from '../data/creative';
+import { creativeCollections, offClockBlurbs, travelTrips } from '../data/creative';
 
 const labels = { travel: 'Photography/Travel', music: 'Music', fitness: 'Fitness & Sports', business: 'Business' };
-function ScatterGallery({ photos, stories = [], className = '', browse = false }) {
+function ScatterGallery({ photos, className = '', browse = false }) {
   return <div className={'scatter-gallery '+className}>{photos.map((photo,i)=><figure className={'scatter-image scatter-image--'+i} key={photo.src}>
-    {stories[i]&&<div className="fitness-blurb"><h4>{stories[i].title}</h4><p>{stories[i].text}</p></div>}
-    <Photo src={photo.src} alt={photo.alt} caption={photo.caption} gallery={photos} browse={browse} sizes="(max-width: 700px) 90vw, 55vw"/>
+    <Photo src={photo.src} alt={photo.alt} caption={photo.caption || photo.alt} gallery={photos} browse={browse} sizes={browse ? "(max-width: 700px) 86vw, (max-width: 1000px) 43vw, 355px" : "(max-width: 700px) 86vw, 355px"}/>
     {photo.caption&&<figcaption>{photo.caption}</figcaption>}
   </figure>)}</div>;
 }
+function MusicGallery({ photos }) {
+  const photographs = photos.filter(photo=>!photo.graphic);
+  const achievements = photos.filter(photo=>photo.graphic);
+  const figure = photo => <figure className="scatter-image" key={photo.src}>
+    <Photo src={photo.src} alt={photo.alt} caption={photo.caption || photo.alt} sizes="(max-width: 700px) 86vw, 55vw"/>
+    {photo.caption&&<figcaption>{photo.caption}</figcaption>}
+  </figure>;
+  return <div className="music-gallery"><div className="music-photo-composition">
+    {photographs[0]&&figure(photographs[0])}
+    <div className="music-remix-photos">{photographs.slice(1).map(figure)}</div>
+  </div><div className="music-achievements">{achievements.map(figure)}</div></div>;
+}
 function TravelPhotography() {
-  const [trip,setTrip]=useState(null);
+  const [params,setParams]=useSearchParams();
+  const trip=travelTrips.find(item=>item.slug===params.get('album')) || null;
+  const setTrip=selected=>setParams(previous=>{const next=new URLSearchParams(previous);if(selected)next.set('album',selected.slug);else next.delete('album');return next;});
   const title=useRef(null);
   const folderTrigger=useRef(null);
   const chooseTrip=selected=>{
@@ -30,17 +43,18 @@ function TravelPhotography() {
 }
 export default function Creative() {
   const {hash}=useLocation();
+  const navigate=useNavigate();
   const [active,setActive]=useState('travel');
   const tabs=useRef([]);
   useEffect(()=>{
     let slug=hash.replace(/^#(?:creative|off-the-clock)-/,'');
     if(slug==='ventures')slug='business';
     const target=creativeCollections.find(c=>c.slug===slug);
-    if(target)setActive(target.disabled?'travel':slug);
+    setActive(target&&!target.disabled?slug:'travel');
   },[hash]);
   const collection=creativeCollections.find(c=>c.slug===active);
   const enabled=creativeCollections.flatMap((c,index)=>c.disabled?[]:[index]);
-  const changeTab=index=>{if(creativeCollections[index].disabled)return;setActive(creativeCollections[index].slug);tabs.current[index]?.focus();};
+  const changeTab=index=>{if(creativeCollections[index].disabled)return;setActive(creativeCollections[index].slug);navigate('#off-the-clock-'+creativeCollections[index].slug,{preventScrollReset:true});tabs.current[index]?.focus();};
   return <div className="off-clock-section wrap">
     <SectionHeading id="off-the-clock-heading" index="04">Off the Clock</SectionHeading>
     <div className="off-clock-tabs" role="tablist" aria-label="Off the Clock collections">
@@ -54,10 +68,10 @@ export default function Creative() {
           if(event.key==='Home')index=enabled[0];
           if(event.key==='End')index=enabled[enabled.length-1];
           if(index!==undefined){event.preventDefault();changeTab(index);}
-        }}>{labels[c.slug]}</button>)}
+        }}>{labels[c.slug]}{c.disabled&&<small className="coming-soon">Coming soon</small>}</button>)}
     </div>
     <div id="off-clock-panel" className={'off-clock-panel off-clock-panel--'+active} role="tabpanel" aria-labelledby={'off-clock-tab-'+active} tabIndex="0">
-      {active==='travel'?<TravelPhotography/>:<><div className={'off-clock-blurb off-clock-blurb--'+active}><h3>{active==='music'?'Music Production & Audio Engineering':'Fitness & Sports'}</h3>{active==='music'&&offClockBlurbs.music.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div><ScatterGallery key={active} photos={collection.photos} stories={active==='fitness'?fitnessStories:[]} className={'scatter-gallery--'+active}/></>}
+      {active==='travel'?<TravelPhotography/>:<><div className={'off-clock-blurb off-clock-blurb--'+active}><h3>{active==='music'?'Music Production & Audio Engineering':'Fitness & Sports'}</h3>{active==='music'?offClockBlurbs.music.map(paragraph=><p key={paragraph}>{paragraph}</p>):<p>{offClockBlurbs.fitness}</p>}</div>{active==='music'?<MusicGallery photos={collection.photos}/>:<ScatterGallery key={active} photos={collection.photos} className={'scatter-gallery--'+active}/>}</>}
     </div>
   </div>;
 }

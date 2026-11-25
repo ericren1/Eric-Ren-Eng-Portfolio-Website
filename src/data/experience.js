@@ -192,9 +192,3 @@ export const experiences = [
 Object.assign(experiences.find(job => job.id === 'td-reconciliation'), { photo: workPhotos.fallLunch, photos: [workPhotos.fallLunch, workPhotos.fallSpeedMentoring] });
 Object.assign(experiences.find(job => job.id === 'td-backend'), { photo: workPhotos.summerConference, photos: [workPhotos.summerConference] });
 
-experiences.push({
-  id: 'unity-health', company: 'Unity Health Toronto', role: 'Information Technology Intern',
-  period: 'September - December 2024', team: 'Internship / Toronto / Hybrid',
-  tech: ['ServiceNow', 'Epic Systems'],
-  bullets: ['Supported the Epic Systems rollout across workstations, assisting with deployment, troubleshooting, and resolving technical issues.']
-});

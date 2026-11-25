@@ -4,12 +4,20 @@ import images from '../data/images.json';
 import { selectContactPhotos } from '../data/contactSheet';
 
 const photos = selectContactPhotos();
+const assemblyDuration = 850;
+const waveDelay = 50;
 const placements = [
   [9,7,-12,1.05],[40,2,8,.85],[72,10,-5,1.05],[1,36,6,.95],
   [34,28,-9,1.2],[67,37,12,1.08],[13,64,-6,.9],[45,65,7,1.1],
   [78,71,-8,.9],[55,48,-4,.95],[20,46,10,.84],[75,51,5,.9],
+  [100,-10,-7,.62],[60,75,-4,.84],[-115,22,7,.6],[5,75,6,.8],
+  [95,100,-9,.65],[75,35,-8,.82],
+  [3,17,-6,.8],[62,82,9,.8],
 ];
-const roaming = { 2: [-87,-7,-13,.68], 6: [-55,48,9,.7], 10: [-114,105,-8,.6] };
+const roaming = {
+  2: [-87,-7,-13,.68], 6: [-55,48,9,.7], 10: [-114,105,-8,.6],
+  12: [100,-10,-7,.62], 14: [-115,22,7,.6], 16: [95,100,-9,.65],
+};
 function setDriftBounds(tile, frame, drift, canvas) {
   const matrix = new DOMMatrix(tile.style.transform), inverse = matrix.inverse();
   const width = parseFloat(frame.style.width), height = parseFloat(frame.style.height);
@@ -46,10 +54,13 @@ export default function HomeCollage() {
   const drag = useRef(null);
   const manualTransforms = useRef({});
   const [draggingIndex,setDraggingIndex] = useState(null);
+  const [selectedPhoto,setSelectedPhoto] = useState(null);
   const [size,setSize] = useState({width:600,height:650});
   const [assembled,setAssembled] = useState(false);
   const [ready,setReady] = useState(false);
   const [paused,setPaused] = useState(false);
+  const [hidden,setHidden] = useState(document.hidden);
+  useEffect(()=>{const update=()=>setHidden(document.hidden);document.addEventListener('visibilitychange',update);return ()=>document.removeEventListener('visibilitychange',update);},[]);
   const [reduced,setReduced] = useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
   useEffect(() => {
     const observer = new ResizeObserver(([entry]) => setSize({width:entry.contentRect.width,height:entry.contentRect.height}));
@@ -70,7 +81,7 @@ export default function HomeCollage() {
     const cell = sheet / cols;
     const gap = Math.max(3,size.width * .007);
     const waveCount = cols + rows - 2;
-    const timer = setTimeout(() => setReady(compact),reduced ? 0 : compact ? 720 + waveCount * 85 : 0);
+    const timer = setTimeout(() => setReady(compact),reduced ? 0 : compact ? assemblyDuration + waveCount * waveDelay : 0);
     if (!compact) setReady(false);
     tiles.current.forEach((tile,index) => {
       if (!tile) return;
@@ -98,8 +109,8 @@ export default function HomeCollage() {
       const fromTransform = visibleTransform.multiply(new DOMMatrix(getComputedStyle(drift).transform).inverse()).toString();
       if (reduced || resized || !tile.dataset.initialized) tile.dataset.initialized='true';
       else {
-        const timing = { duration:720,delay:(compact ? row+col : waveCount-row-col)*85,
-          easing:'cubic-bezier(.22,.68,.18,1)',fill:'backwards' };
+        const timing = { duration:assemblyDuration,delay:(compact ? row+col : waveCount-row-col)*waveDelay,
+          easing:'cubic-bezier(.35,0,.25,1)',fill:'backwards' };
         animations.current[index] = [
           tile.animate([{transform:fromTransform},{transform}],timing),
           frame.animate([previousFrame,frameSize],timing),
@@ -136,6 +147,8 @@ export default function HomeCollage() {
   const endDrag = event => {
     if (!drag.current) return;
     const index=drag.current.index;
+    if(Math.hypot(event.clientX-drag.current.x,event.clientY-drag.current.y)<5)setSelectedPhoto(index);
+    else setSelectedPhoto(null);
     const tile=tiles.current[index], drift=tile.querySelector('.contact-drift');
     const droppedTransform=new DOMMatrix(tile.style.transform);
     setDriftBounds(tile,tile.querySelector('.contact-frame'),drift,board.current);
@@ -148,10 +161,24 @@ export default function HomeCollage() {
     drag.current=null; setDraggingIndex(null);
     if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);
   };
+  useEffect(()=>{
+    if(selectedPhoto===null)return;
+    const place=event=>{
+      if(event.target.closest('a,button,.contact-tile'))return;
+      const bounds=board.current.getBoundingClientRect();
+      movePhoto(selectedPhoto,event.clientX-bounds.left,event.clientY-bounds.top);
+      const tile=tiles.current[selectedPhoto];
+      setDriftBounds(tile,tile.querySelector('.contact-frame'),tile.querySelector('.contact-drift'),board.current);
+      setSelectedPhoto(null);
+    };
+    const cancel=event=>{if(event.key==='Escape')setSelectedPhoto(null);};
+    window.addEventListener('pointerdown',place);window.addEventListener('keydown',cancel);
+    return ()=>{window.removeEventListener('pointerdown',place);window.removeEventListener('keydown',cancel);};
+  },[selectedPhoto,size]);
   const renderPhoto = (photo,index) => {
     const movable = window.innerWidth >= 1000 && Boolean(roaming[index]);
     const info=images[photo.src],variants=info?.variants||[];
-    return <span className={'contact-tile'+(movable?' contact-tile--roaming':'')+(draggingIndex===index?' is-dragging':'')}
+    return <span className={'contact-tile'+(movable?' contact-tile--roaming':'')+(draggingIndex===index?' is-dragging':'')+(selectedPhoto===index?' is-selected':'')}
       key={photo.src} ref={node=>{tiles.current[index]=node;}} style={{zIndex:movable?1:index+1}}
       role={movable?'button':undefined} tabIndex={movable&&!assembled&&!reduced?0:undefined}
       aria-label={movable?'Move photograph: '+photo.alt:undefined} aria-describedby={movable?'photo-drag-help':undefined}
@@ -163,15 +190,16 @@ export default function HomeCollage() {
         if(steps[event.key]){event.preventDefault();const matrix=new DOMMatrix(tiles.current[index].style.transform);movePhoto(index,matrix.e+steps[event.key][0],matrix.f+steps[event.key][1]);}
         if(event.key==='Enter'||event.key===' '){event.preventDefault();board.current.focus();setAssembled(true);}
       }:undefined}>
-      <span className="contact-drift" style={{animationDuration:(8+index%5*1.5)+'s',animationDelay:(-index*1.8)+'s','--drift-x':(index%2?-1:1)*(roaming[index]?160:30+index%3*15)+'px','--drift-y':(index%3?-1:1)*(roaming[index]?140:25+index%4*8)+'px'}}>
-        <span className="contact-frame"><img src={variants[0]?.src||photo.src} width="100" height="100" alt="" draggable="false" decoding="async" loading="eager" onError={event=>{if(event.currentTarget.dataset.originalFallback)return;event.currentTarget.dataset.originalFallback='true';event.currentTarget.src=photo.src;}}/></span>
+      <span className="contact-drift" style={{animationDuration:(8+index%5*1.25)+'s',animationDelay:(-index*2.1)+'s','--drift-x':(index%2?-1:1)*(roaming[index]?160:30+index%3*15)+'px','--drift-y':(index%3?-1:1)*(roaming[index]?140:25+index%4*8)+'px'}}>
+        <span className="contact-frame"><img src={variants[0]?.src||photo.src} srcSet={variants.map(v=>`${v.src} ${v.width}w`).join(", ")} sizes="(max-width: 700px) 120px, 180px" width="100" height="100" alt="" draggable="false" decoding="async" loading="eager" onError={event=>{if(event.currentTarget.dataset.originalFallback)return;event.currentTarget.dataset.originalFallback='true';event.currentTarget.src=photo.src;}}/></span>
       </span>
     </span>;
   };
   const wide = window.innerWidth >= 1000;
-  return <div className={'contact-sheet-wrap'+((assembled||reduced)?' is-assembled':'')+(paused?' is-paused':'')}>
-    <span className="sr-only" id="photo-drag-help">Drag to move this photograph. Use arrow keys to move it with the keyboard, or Enter to return to the contact sheet.</span>
-    <Link ref={board} to="/more-about-me" className={'contact-canvas'+((assembled||reduced)?' is-assembled':'')+(ready?' is-ready':'')+(paused?' is-paused':'')}
+  return <div className={'contact-sheet-wrap'+((assembled||reduced)?' is-assembled':'')+(paused||hidden?' is-paused':'')}>
+    <span className="sr-only" id="photo-drag-help">Drag to move this photograph, or click it and then click an empty area to place it. Use arrow keys to move it with the keyboard, or Enter to return to the contact sheet.</span>
+    {selectedPhoto!==null&&<p className="photo-place-hint" role="status">Click an empty area to place the photo. Escape to cancel.</p>}
+    <Link ref={board} to="/more-about-me" className={'contact-canvas'+((assembled||reduced)?' is-assembled':'')+(ready?' is-ready':'')+(paused||hidden?' is-paused':'')}
       aria-label="More about me: travel, music, fitness, and life outside work"
       onPointerEnter={event=>{if(event.pointerType!=='touch'&&!drag.current)setAssembled(true);}}
       onPointerLeave={event=>{if(event.pointerType!=='touch')setAssembled(false);}}
@@ -182,6 +210,6 @@ export default function HomeCollage() {
       <span className="contact-overlay">More About Me <span aria-hidden="true">&#8599;</span></span>
     </Link>
     {wide&&photos.map((photo,index)=>roaming[index]?renderPhoto(photo,index):null)}
-    <div className="contact-caption"><span className="touch-caption">{assembled||reduced?"Tap the contact sheet to explore":"Tap to arrange the photographs"}</span><button onClick={()=>setPaused(value=>!value)} aria-pressed={paused}>{paused?'Resume motion':'Pause motion'}</button></div>
+    <div className="contact-caption"><Link className="contact-explore" to="/more-about-me">More About Me <span aria-hidden="true">&#8599;</span></Link><span className="touch-caption">{assembled||reduced?"Tap the contact sheet to explore":"Tap to arrange the photographs"}</span><button onClick={()=>setPaused(value=>!value)} aria-pressed={paused}>{paused?'Resume motion':'Pause motion'}</button></div>
   </div>;
 }

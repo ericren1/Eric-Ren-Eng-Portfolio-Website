@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, access } from 'node:fs/promises';
+import { readFile, access, readdir } from 'node:fs/promises';
 import { projects } from '../src/data/projects.js';
-import { creativeCollections } from '../src/data/creative.js';
+import { creativeCollections, travelTrips } from '../src/data/creative.js';
 import { experiences } from '../src/data/experience.js';
 import { getCompanyLogo, fallbackCompanyLogo } from '../src/data/companyLogos.js';
 import { workPhotos } from '../src/data/workPhotos.js';
@@ -26,6 +26,21 @@ test('Creative originals and responsive variants exist',async()=>{
     assert.ok(images[photo.src]?.variants.length);
     for(const variant of images[photo.src].variants) await access('public'+variant.src);
   }
+});
+
+test('Organized Photography folders are completely represented by dated albums',async()=>{
+  const folders=(await readdir('public/images/Photography',{withFileTypes:true})).filter(entry=>entry.isDirectory());
+  const physical=[];
+  for(const folder of folders){
+    for(const file of await readdir('public/images/Photography/'+folder.name)){
+      if(/\.(jpe?g|png|webp)$/i.test(file))physical.push('/images/Photography/'+folder.name+'/'+file);
+    }
+  }
+  const represented=travelTrips.flatMap(trip=>trip.photos.map(photo=>photo.src));
+  assert.deepEqual([...represented].sort(),physical.sort());
+  assert.equal(new Set(represented).size,represented.length);
+  assert.equal(travelTrips.find(trip=>trip.slug==='china-2026').date,"26'");
+  for(const trip of travelTrips)if(trip.year)assert.equal(trip.date,String(trip.year).slice(-2)+"'");
 });
 test('Reconciliation outcomes remain labeled as projections',()=>{
   const job=experiences.find(j=>j.id==='td-reconciliation');

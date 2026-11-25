@@ -1,152 +1,1024 @@
 ﻿{
-    "/images/shanghai.jpg":  {
-                                 "variants":  [
-                                                  {
-                                                      "src":  "/images/optimized/shanghai-640.jpg",
-                                                      "width":  640
-                                                  },
-                                                  {
-                                                      "src":  "/images/optimized/shanghai-1280.jpg",
-                                                      "width":  1280
-                                                  },
-                                                  {
-                                                      "src":  "/images/optimized/shanghai-1920.jpg",
-                                                      "width":  1920
-                                                  }
-                                              ],
-                                 "width":  2160,
-                                 "height":  3840
-                             },
-    "/images/Work photos/Summer td mentoring conference.jpg":  {
-                                                                   "variants":  [
-                                                                                    {
-                                                                                        "src":  "/images/optimized/work-photos-summer-td-mentoring-conference-640.jpg",
-                                                                                        "width":  640
-                                                                                    },
-                                                                                    {
-                                                                                        "src":  "/images/optimized/work-photos-summer-td-mentoring-conference-1280.jpg",
-                                                                                        "width":  1280
-                                                                                    }
-                                                                                ],
-                                                                   "width":  1600,
-                                                                   "height":  1200
-                                                               },
-    "/images/gym.jpg":  {
-                            "variants":  [
-                                             {
-                                                 "src":  "/images/optimized/gym-640.jpg",
-                                                 "width":  640
-                                             },
-                                             {
-                                                 "src":  "/images/optimized/gym-1280.jpg",
-                                                 "width":  1280
-                                             },
-                                             {
-                                                 "src":  "/images/optimized/gym-1920.jpg",
-                                                 "width":  1920
-                                             }
-                                         ],
-                            "width":  2160,
-                            "height":  2880
-                        },
-    "/images/Work photos/Fall TD speed mentoring.jpg":  {
+    "/images/Photography/China 2026/changchun river.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-changchun-river-320.jpg",
+                                                                                    "width":  320
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-changchun-river-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-changchun-river-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-changchun-river-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  3840,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/China 2026/trainstation.jpg":  {
                                                             "variants":  [
                                                                              {
-                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-640.jpg",
+                                                                                 "src":  "/images/optimized/photography-china-2026-trainstation-640.jpg",
                                                                                  "width":  640
                                                                              },
                                                                              {
-                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-1280.jpg",
+                                                                                 "src":  "/images/optimized/photography-china-2026-trainstation-1280.jpg",
                                                                                  "width":  1280
                                                                              },
                                                                              {
-                                                                                 "src":  "/images/optimized/work-photos-fall-td-speed-mentoring-1920.jpg",
+                                                                                 "src":  "/images/optimized/photography-china-2026-trainstation-1920.jpg",
                                                                                  "width":  1920
                                                                              }
                                                                          ],
-                                                            "width":  1920,
-                                                            "height":  673
+                                                            "width":  2160,
+                                                            "height":  2880,
+                                                            "capturedAt":  null
                                                         },
-    "/images/Yodaguy museum.jpg":  {
-                                       "variants":  [
-                                                        {
-                                                            "src":  "/images/optimized/yodaguy-museum-640.jpg",
-                                                            "width":  640
-                                                        },
-                                                        {
-                                                            "src":  "/images/optimized/yodaguy-museum-1280.jpg",
-                                                            "width":  1280
-                                                        },
-                                                        {
-                                                            "src":  "/images/optimized/yodaguy-museum-1920.jpg",
-                                                            "width":  1920
-                                                        }
-                                                    ],
-                                       "width":  2160,
-                                       "height":  2880
-                                   },
-    "/images/asfasf.jpg":  {
-                               "variants":  [
-                                                {
-                                                    "src":  "/images/optimized/asfasf-640.jpg",
-                                                    "width":  640
-                                                },
-                                                {
-                                                    "src":  "/images/optimized/asfasf-1280.jpg",
-                                                    "width":  1280
-                                                },
-                                                {
-                                                    "src":  "/images/optimized/asfasf-1920.jpg",
-                                                    "width":  1920
-                                                }
-                                            ],
-                               "width":  2880,
-                               "height":  2160
-                           },
-    "/images/fasaf.png":  {
-                              "variants":  [
-                                               {
-                                                   "src":  "/images/optimized/fasaf-640.jpg",
-                                                   "width":  640
-                                               }
-                                           ],
-                              "width":  1080,
-                              "height":  1352
-                          },
-    "/images/hoops.jpg":  {
-                              "variants":  [
-                                               {
-                                                   "src":  "/images/optimized/hoops-640.jpg",
-                                                   "width":  640
+    "/images/Photography/US road trip 2026/offtrail.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-us-road-trip-2026-offtrail-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-us-road-trip-2026-offtrail-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-us-road-trip-2026-offtrail-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  2880,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/Mexico Playa Del carmen 2023/landscape.jpg":  {
+                                                                           "variants":  [
+                                                                                            {
+                                                                                                "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-landscape-640.jpg",
+                                                                                                "width":  640
+                                                                                            }
+                                                                                        ],
+                                                                           "width":  1242,
+                                                                           "height":  2208,
+                                                                           "capturedAt":  null
+                                                                       },
+    "/images/Photography/China 2026/shanghai.jpg":  {
+                                                        "variants":  [
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-shanghai-320.jpg",
+                                                                             "width":  320
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-shanghai-640.jpg",
+                                                                             "width":  640
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-shanghai-1280.jpg",
+                                                                             "width":  1280
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-shanghai-1920.jpg",
+                                                                             "width":  1920
+                                                                         }
+                                                                     ],
+                                                        "width":  2160,
+                                                        "height":  3840,
+                                                        "capturedAt":  null
+                                                    },
+    "/images/Music/Remixprojectgradgrey.jpg":  {
+                                                   "variants":  [
+                                                                    {
+                                                                        "src":  "/images/optimized/music-remixprojectgradgrey-640.jpg",
+                                                                        "width":  640
+                                                                    }
+                                                                ],
+                                                   "width":  1170,
+                                                   "height":  2532,
+                                                   "capturedAt":  null
                                                },
-                                               {
-                                                   "src":  "/images/optimized/hoops-1280.jpg",
-                                                   "width":  1280
-                                               }
-                                           ],
-                              "width":  1293,
-                              "height":  1940
-                          },
-    "/images/cruise.jpg":  {
-                               "variants":  [
-                                                {
-                                                    "src":  "/images/optimized/cruise-640.jpg",
-                                                    "width":  640
-                                                },
-                                                {
-                                                    "src":  "/images/optimized/cruise-1280.jpg",
-                                                    "width":  1280
-                                                },
-                                                {
-                                                    "src":  "/images/optimized/cruise-1920.jpg",
-                                                    "width":  1920
-                                                }
-                                            ],
-                               "width":  2160,
-                               "height":  2880
-                           },
+    "/images/Photography/China 2026/suzhou cafe.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suzhou-cafe-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suzhou-cafe-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suzhou-cafe-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  3840,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/Photography/Yodaguy museum/script.jpg":  {
+                                                          "variants":  [
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-script-640.jpg",
+                                                                               "width":  640
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-script-1280.jpg",
+                                                                               "width":  1280
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-script-1920.jpg",
+                                                                               "width":  1920
+                                                                           }
+                                                                       ],
+                                                          "width":  2160,
+                                                          "height":  2880,
+                                                          "capturedAt":  null
+                                                      },
+    "/images/Photography/F1 Miami 2025/Miami.jpg":  {
+                                                        "variants":  [
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-f1-miami-2025-miami-320.jpg",
+                                                                             "width":  320
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-f1-miami-2025-miami-640.jpg",
+                                                                             "width":  640
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-f1-miami-2025-miami-1280.jpg",
+                                                                             "width":  1280
+                                                                         }
+                                                                     ],
+                                                        "width":  1536,
+                                                        "height":  2048,
+                                                        "capturedAt":  null
+                                                    },
+    "/images/Photography/F1 Miami 2025/f1.jpg":  {
+                                                     "variants":  [
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-f1-miami-2025-f1-320.jpg",
+                                                                          "width":  320
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-f1-miami-2025-f1-640.jpg",
+                                                                          "width":  640
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-f1-miami-2025-f1-1280.jpg",
+                                                                          "width":  1280
+                                                                      }
+                                                                  ],
+                                                     "width":  1536,
+                                                     "height":  2048,
+                                                     "capturedAt":  null
+                                                 },
+    "/images/Photography/US road trip 2026/creek.jpg":  {
+                                                            "variants":  [
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-us-road-trip-2026-creek-640.jpg",
+                                                                                 "width":  640
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-us-road-trip-2026-creek-1280.jpg",
+                                                                                 "width":  1280
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-us-road-trip-2026-creek-1920.jpg",
+                                                                                 "width":  1920
+                                                                             }
+                                                                         ],
+                                                            "width":  2160,
+                                                            "height":  2880,
+                                                            "capturedAt":  null
+                                                        },
+    "/images/Photography/China 2026/china.jpg":  {
+                                                     "variants":  [
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-china-2026-china-320.jpg",
+                                                                          "width":  320
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-china-2026-china-640.jpg",
+                                                                          "width":  640
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-china-2026-china-1280.jpg",
+                                                                          "width":  1280
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/photography-china-2026-china-1920.jpg",
+                                                                          "width":  1920
+                                                                      }
+                                                                  ],
+                                                     "width":  2160,
+                                                     "height":  3840,
+                                                     "capturedAt":  null
+                                                 },
+    "/images/Photography/Carribean Cruise 2025/scene.jpg":  {
+                                                                "variants":  [
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-scene-640.jpg",
+                                                                                     "width":  640
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-scene-1280.jpg",
+                                                                                     "width":  1280
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-scene-1920.jpg",
+                                                                                     "width":  1920
+                                                                                 }
+                                                                             ],
+                                                                "width":  2160,
+                                                                "height":  2880,
+                                                                "capturedAt":  null
+                                                            },
+    "/images/Music/remixprojectwitrich.jpg":  {
+                                                  "variants":  [
+                                                                   {
+                                                                       "src":  "/images/optimized/music-remixprojectwitrich-320.jpg",
+                                                                       "width":  320
+                                                                   },
+                                                                   {
+                                                                       "src":  "/images/optimized/music-remixprojectwitrich-640.jpg",
+                                                                       "width":  640
+                                                                   },
+                                                                   {
+                                                                       "src":  "/images/optimized/music-remixprojectwitrich-1280.jpg",
+                                                                       "width":  1280
+                                                                   },
+                                                                   {
+                                                                       "src":  "/images/optimized/music-remixprojectwitrich-1920.jpg",
+                                                                       "width":  1920
+                                                                   }
+                                                               ],
+                                                  "width":  3240,
+                                                  "height":  2160,
+                                                  "capturedAt":  null
+                                              },
+    "/images/Photography/China 2026/lillies.jpg":  {
+                                                       "variants":  [
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-china-2026-lillies-640.jpg",
+                                                                            "width":  640
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-china-2026-lillies-1280.jpg",
+                                                                            "width":  1280
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-china-2026-lillies-1920.jpg",
+                                                                            "width":  1920
+                                                                        }
+                                                                    ],
+                                                       "width":  2160,
+                                                       "height":  3840,
+                                                       "capturedAt":  null
+                                                   },
+    "/images/Photography/China 2026/gentlemonstershanghai.jpg":  {
+                                                                     "variants":  [
+                                                                                      {
+                                                                                          "src":  "/images/optimized/photography-china-2026-gentlemonstershanghai-320.jpg",
+                                                                                          "width":  320
+                                                                                      },
+                                                                                      {
+                                                                                          "src":  "/images/optimized/photography-china-2026-gentlemonstershanghai-640.jpg",
+                                                                                          "width":  640
+                                                                                      },
+                                                                                      {
+                                                                                          "src":  "/images/optimized/photography-china-2026-gentlemonstershanghai-1280.jpg",
+                                                                                          "width":  1280
+                                                                                      },
+                                                                                      {
+                                                                                          "src":  "/images/optimized/photography-china-2026-gentlemonstershanghai-1920.jpg",
+                                                                                          "width":  1920
+                                                                                      }
+                                                                                  ],
+                                                                     "width":  2160,
+                                                                     "height":  3840,
+                                                                     "capturedAt":  null
+                                                                 },
+    "/images/Photography/Carribean Cruise 2025/afaf.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-afaf-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-afaf-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-afaf-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  2880,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/Carribean Cruise 2025/sGF.jpg":  {
+                                                              "variants":  [
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-carribean-cruise-2025-sgf-640.jpg",
+                                                                                   "width":  640
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-carribean-cruise-2025-sgf-1280.jpg",
+                                                                                   "width":  1280
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-carribean-cruise-2025-sgf-1920.jpg",
+                                                                                   "width":  1920
+                                                                               }
+                                                                           ],
+                                                              "width":  2160,
+                                                              "height":  2880,
+                                                              "capturedAt":  null
+                                                          },
+    "/images/Photography/Mexico Playa Del carmen 2023/ruins.jpg":  {
+                                                                       "variants":  [
+                                                                                        {
+                                                                                            "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-ruins-640.jpg",
+                                                                                            "width":  640
+                                                                                        }
+                                                                                    ],
+                                                                       "width":  1240,
+                                                                       "height":  2202,
+                                                                       "capturedAt":  null
+                                                                   },
+    "/images/Photography/Mexico Playa Del carmen 2023/tacos.jpg":  {
+                                                                       "variants":  [
+                                                                                        {
+                                                                                            "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-tacos-640.jpg",
+                                                                                            "width":  640
+                                                                                        }
+                                                                                    ],
+                                                                       "width":  1238,
+                                                                       "height":  2200,
+                                                                       "capturedAt":  null
+                                                                   },
+    "/images/Photography/F1 Miami 2025/racestreet.jpg":  {
+                                                             "variants":  [
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-f1-miami-2025-racestreet-640.jpg",
+                                                                                  "width":  640
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-f1-miami-2025-racestreet-1280.jpg",
+                                                                                  "width":  1280
+                                                                              }
+                                                                          ],
+                                                             "width":  1536,
+                                                             "height":  2048,
+                                                             "capturedAt":  null
+                                                         },
+    "/images/Photography/Yodaguy museum/babyyoda.jpg":  {
+                                                            "variants":  [
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-yodaguy-museum-babyyoda-640.jpg",
+                                                                                 "width":  640
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-yodaguy-museum-babyyoda-1280.jpg",
+                                                                                 "width":  1280
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-yodaguy-museum-babyyoda-1920.jpg",
+                                                                                 "width":  1920
+                                                                             }
+                                                                         ],
+                                                            "width":  2160,
+                                                            "height":  2880,
+                                                            "capturedAt":  null
+                                                        },
+    "/images/Photography/China 2026/guilinroad1.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad1-320.jpg",
+                                                                                "width":  320
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad1-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad1-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad1-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  3840,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/Photography/Carribean Cruise 2025/2141.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-2141-320.jpg",
+                                                                                    "width":  320
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-2141-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-2141-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-2141-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  2880,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/Mexico Playa Del carmen 2023/path.jpg":  {
+                                                                      "variants":  [
+                                                                                       {
+                                                                                           "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-path-640.jpg",
+                                                                                           "width":  640
+                                                                                       }
+                                                                                   ],
+                                                                      "width":  1238,
+                                                                      "height":  2200,
+                                                                      "capturedAt":  null
+                                                                  },
+    "/images/Photography/China 2026/goodeats.jpg":  {
+                                                        "variants":  [
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-goodeats-320.jpg",
+                                                                             "width":  320
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-goodeats-640.jpg",
+                                                                             "width":  640
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-goodeats-1280.jpg",
+                                                                             "width":  1280
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-goodeats-1920.jpg",
+                                                                             "width":  1920
+                                                                         }
+                                                                     ],
+                                                        "width":  2160,
+                                                        "height":  3840,
+                                                        "capturedAt":  null
+                                                    },
+    "/images/TD photos/Fall TD speed mentoring.jpg":  {
+                                                          "variants":  [
+                                                                           {
+                                                                               "src":  "/images/optimized/td-photos-fall-td-speed-mentoring-320.jpg",
+                                                                               "width":  320
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/td-photos-fall-td-speed-mentoring-640.jpg",
+                                                                               "width":  640
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/td-photos-fall-td-speed-mentoring-1280.jpg",
+                                                                               "width":  1280
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/td-photos-fall-td-speed-mentoring-1920.jpg",
+                                                                               "width":  1920
+                                                                           }
+                                                                       ],
+                                                          "width":  1920,
+                                                          "height":  673,
+                                                          "capturedAt":  null
+                                                      },
+    "/images/Photography/China 2026/suzhouferriswheel.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-china-2026-suzhouferriswheel-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-china-2026-suzhouferriswheel-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-china-2026-suzhouferriswheel-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2160,
+                                                                 "height":  3840,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/China 2026/guilinroadcorgi.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-guilinroadcorgi-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-guilinroadcorgi-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-china-2026-guilinroadcorgi-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  3840,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/US road trip 2026/sunset.jpg":  {
+                                                             "variants":  [
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-us-road-trip-2026-sunset-640.jpg",
+                                                                                  "width":  640
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-us-road-trip-2026-sunset-1280.jpg",
+                                                                                  "width":  1280
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-us-road-trip-2026-sunset-1920.jpg",
+                                                                                  "width":  1920
+                                                                              }
+                                                                          ],
+                                                             "width":  2160,
+                                                             "height":  2880,
+                                                             "capturedAt":  null
+                                                         },
+    "/images/Photography/China 2026/chinacat.jpg":  {
+                                                        "variants":  [
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-chinacat-320.jpg",
+                                                                             "width":  320
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-chinacat-640.jpg",
+                                                                             "width":  640
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-chinacat-1280.jpg",
+                                                                             "width":  1280
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-china-2026-chinacat-1920.jpg",
+                                                                             "width":  1920
+                                                                         }
+                                                                     ],
+                                                        "width":  2160,
+                                                        "height":  2880,
+                                                        "capturedAt":  null
+                                                    },
+    "/images/Photography/Yodaguy museum/yg1.jpg":  {
+                                                       "variants":  [
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-yg1-640.jpg",
+                                                                            "width":  640
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-yg1-1280.jpg",
+                                                                            "width":  1280
+                                                                        },
+                                                                        {
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-yg1-1920.jpg",
+                                                                            "width":  1920
+                                                                        }
+                                                                    ],
+                                                       "width":  2160,
+                                                       "height":  2880,
+                                                       "capturedAt":  null
+                                                   },
+    "/images/Sports/hoops.jpg":  {
+                                     "variants":  [
+                                                      {
+                                                          "src":  "/images/optimized/sports-hoops-320.jpg",
+                                                          "width":  320
+                                                      },
+                                                      {
+                                                          "src":  "/images/optimized/sports-hoops-640.jpg",
+                                                          "width":  640
+                                                      },
+                                                      {
+                                                          "src":  "/images/optimized/sports-hoops-1280.jpg",
+                                                          "width":  1280
+                                                      }
+                                                  ],
+                                     "width":  1293,
+                                     "height":  1940,
+                                     "capturedAt":  null
+                                 },
+    "/images/Photography/Yodaguy museum/Yodaguy museum.jpg":  {
+                                                                  "variants":  [
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-yodaguy-museum-yodaguy-museum-320.jpg",
+                                                                                       "width":  320
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-yodaguy-museum-yodaguy-museum-640.jpg",
+                                                                                       "width":  640
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-yodaguy-museum-yodaguy-museum-1280.jpg",
+                                                                                       "width":  1280
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-yodaguy-museum-yodaguy-museum-1920.jpg",
+                                                                                       "width":  1920
+                                                                                   }
+                                                                               ],
+                                                                  "width":  2160,
+                                                                  "height":  2880,
+                                                                  "capturedAt":  null
+                                                              },
+    "/images/Photography/Carribean Cruise 2025/fafaf.jpg":  {
+                                                                "variants":  [
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-fafaf-640.jpg",
+                                                                                     "width":  640
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-fafaf-1280.jpg",
+                                                                                     "width":  1280
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-fafaf-1920.jpg",
+                                                                                     "width":  1920
+                                                                                 }
+                                                                             ],
+                                                                "width":  2160,
+                                                                "height":  2880,
+                                                                "capturedAt":  null
+                                                            },
+    "/images/Photography/Carribean Cruise 2025/cruise.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-cruise-320.jpg",
+                                                                                      "width":  320
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-cruise-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-cruise-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-cruise-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2160,
+                                                                 "height":  2880,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/US road trip 2026/topofmountain.jpg":  {
+                                                                    "variants":  [
+                                                                                     {
+                                                                                         "src":  "/images/optimized/photography-us-road-trip-2026-topofmountain-640.jpg",
+                                                                                         "width":  640
+                                                                                     },
+                                                                                     {
+                                                                                         "src":  "/images/optimized/photography-us-road-trip-2026-topofmountain-1280.jpg",
+                                                                                         "width":  1280
+                                                                                     },
+                                                                                     {
+                                                                                         "src":  "/images/optimized/photography-us-road-trip-2026-topofmountain-1920.jpg",
+                                                                                         "width":  1920
+                                                                                     }
+                                                                                 ],
+                                                                    "width":  2160,
+                                                                    "height":  2880,
+                                                                    "capturedAt":  null
+                                                                },
+    "/images/Photography/Carribean Cruise 2025/afadfad.jpg":  {
+                                                                  "variants":  [
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-carribean-cruise-2025-afadfad-640.jpg",
+                                                                                       "width":  640
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-carribean-cruise-2025-afadfad-1280.jpg",
+                                                                                       "width":  1280
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-carribean-cruise-2025-afadfad-1920.jpg",
+                                                                                       "width":  1920
+                                                                                   }
+                                                                               ],
+                                                                  "width":  2160,
+                                                                  "height":  2880,
+                                                                  "capturedAt":  null
+                                                              },
+    "/images/Photography/China 2026/suyzhounice.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suyzhounice-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suyzhounice-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suyzhounice-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  3840,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/TD photos/Fall td team lunch.jpg":  {
+                                                     "variants":  [
+                                                                      {
+                                                                          "src":  "/images/optimized/td-photos-fall-td-team-lunch-320.jpg",
+                                                                          "width":  320
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/td-photos-fall-td-team-lunch-640.jpg",
+                                                                          "width":  640
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/td-photos-fall-td-team-lunch-1280.jpg",
+                                                                          "width":  1280
+                                                                      },
+                                                                      {
+                                                                          "src":  "/images/optimized/td-photos-fall-td-team-lunch-1920.jpg",
+                                                                          "width":  1920
+                                                                      }
+                                                                  ],
+                                                     "width":  3072,
+                                                     "height":  4080,
+                                                     "capturedAt":  "2026-10-08T13:53:17"
+                                                 },
+    "/images/Music/Studio.jpg":  {
+                                     "variants":  [
+                                                      {
+                                                          "src":  "/images/optimized/music-studio-320.jpg",
+                                                          "width":  320
+                                                      },
+                                                      {
+                                                          "src":  "/images/optimized/music-studio-640.jpg",
+                                                          "width":  640
+                                                      },
+                                                      {
+                                                          "src":  "/images/optimized/music-studio-1280.jpg",
+                                                          "width":  1280
+                                                      },
+                                                      {
+                                                          "src":  "/images/optimized/music-studio-1920.jpg",
+                                                          "width":  1920
+                                                      }
+                                                  ],
+                                     "width":  2880,
+                                     "height":  2160,
+                                     "capturedAt":  null
+                                 },
+    "/images/Photography/F1 Miami 2025/f1car2.jpg":  {
+                                                         "variants":  [
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-f1-miami-2025-f1car2-640.jpg",
+                                                                              "width":  640
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-f1-miami-2025-f1car2-1280.jpg",
+                                                                              "width":  1280
+                                                                          }
+                                                                      ],
+                                                         "width":  1536,
+                                                         "height":  2048,
+                                                         "capturedAt":  null
+                                                     },
+    "/images/Sports/gym.jpg":  {
+                                   "variants":  [
+                                                    {
+                                                        "src":  "/images/optimized/sports-gym-320.jpg",
+                                                        "width":  320
+                                                    },
+                                                    {
+                                                        "src":  "/images/optimized/sports-gym-640.jpg",
+                                                        "width":  640
+                                                    },
+                                                    {
+                                                        "src":  "/images/optimized/sports-gym-1280.jpg",
+                                                        "width":  1280
+                                                    },
+                                                    {
+                                                        "src":  "/images/optimized/sports-gym-1920.jpg",
+                                                        "width":  1920
+                                                    }
+                                                ],
+                                   "width":  2160,
+                                   "height":  2880,
+                                   "capturedAt":  null
+                               },
+    "/images/Photography/China 2026/mangosteen.jpg":  {
+                                                          "variants":  [
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-china-2026-mangosteen-640.jpg",
+                                                                               "width":  640
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-china-2026-mangosteen-1280.jpg",
+                                                                               "width":  1280
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-china-2026-mangosteen-1920.jpg",
+                                                                               "width":  1920
+                                                                           }
+                                                                       ],
+                                                          "width":  2160,
+                                                          "height":  3840,
+                                                          "capturedAt":  null
+                                                      },
+    "/images/Photography/US road trip 2026/sign.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-sign-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-sign-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-sign-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  2880,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/Photography/Mexico Playa Del carmen 2023/beach.jpg":  {
+                                                                       "variants":  [
+                                                                                        {
+                                                                                            "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-beach-640.jpg",
+                                                                                            "width":  640
+                                                                                        }
+                                                                                    ],
+                                                                       "width":  1240,
+                                                                       "height":  2202,
+                                                                       "capturedAt":  null
+                                                                   },
+    "/images/Music/muso prod.png":  {
+                                        "variants":  [
+                                                         {
+                                                             "src":  "/images/optimized/music-muso-prod-640.jpg",
+                                                             "width":  640
+                                                         }
+                                                     ],
+                                        "width":  1080,
+                                        "height":  1352,
+                                        "capturedAt":  null
+                                    },
+    "/images/Sports/Snowboarding.jpg":  {
+                                            "variants":  [
+                                                             {
+                                                                 "src":  "/images/optimized/sports-snowboarding-320.jpg",
+                                                                 "width":  320
+                                                             },
+                                                             {
+                                                                 "src":  "/images/optimized/sports-snowboarding-640.jpg",
+                                                                 "width":  640
+                                                             },
+                                                             {
+                                                                 "src":  "/images/optimized/sports-snowboarding-1280.jpg",
+                                                                 "width":  1280
+                                                             },
+                                                             {
+                                                                 "src":  "/images/optimized/sports-snowboarding-1920.jpg",
+                                                                 "width":  1920
+                                                             }
+                                                         ],
+                                            "width":  2160,
+                                            "height":  2880,
+                                            "capturedAt":  null
+                                        },
+    "/images/Photography/F1 Miami 2025/f1car.jpg":  {
+                                                        "variants":  [
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-f1-miami-2025-f1car-640.jpg",
+                                                                             "width":  640
+                                                                         },
+                                                                         {
+                                                                             "src":  "/images/optimized/photography-f1-miami-2025-f1car-1280.jpg",
+                                                                             "width":  1280
+                                                                         }
+                                                                     ],
+                                                        "width":  1536,
+                                                        "height":  2048,
+                                                        "capturedAt":  null
+                                                    },
+    "/images/Photography/Carribean Cruise 2025/sdgsgf.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgsgf-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgsgf-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgsgf-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2160,
+                                                                 "height":  2880,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/Yodaguy museum/singature.jpg":  {
+                                                             "variants":  [
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-yodaguy-museum-singature-640.jpg",
+                                                                                  "width":  640
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-yodaguy-museum-singature-1280.jpg",
+                                                                                  "width":  1280
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-yodaguy-museum-singature-1920.jpg",
+                                                                                  "width":  1920
+                                                                              }
+                                                                          ],
+                                                             "width":  2160,
+                                                             "height":  2880,
+                                                             "capturedAt":  null
+                                                         },
+    "/images/Photography/Yodaguy museum/lilguy.jpg":  {
+                                                          "variants":  [
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-lilguy-640.jpg",
+                                                                               "width":  640
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-lilguy-1280.jpg",
+                                                                               "width":  1280
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-lilguy-1920.jpg",
+                                                                               "width":  1920
+                                                                           }
+                                                                       ],
+                                                          "width":  2160,
+                                                          "height":  2880,
+                                                          "capturedAt":  null
+                                                      },
+    "/images/Photography/Carribean Cruise 2025/afadfa.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-afadfa-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-afadfa-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-afadfa-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2880,
+                                                                 "height":  2160,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Music/muso.png":  {
+                                   "variants":  [
+                                                    {
+                                                        "src":  "/images/optimized/music-muso-640.jpg",
+                                                        "width":  640
+                                                    }
+                                                ],
+                                   "width":  1080,
+                                   "height":  1352,
+                                   "capturedAt":  null
+                               },
     "/images/about me photo.jpg":  {
                                        "variants":  [
+                                                        {
+                                                            "src":  "/images/optimized/about-me-photo-320.jpg",
+                                                            "width":  320
+                                                        },
                                                         {
                                                             "src":  "/images/optimized/about-me-photo-640.jpg",
                                                             "width":  640
@@ -161,58 +1033,612 @@
                                                         }
                                                     ],
                                        "width":  2160,
-                                       "height":  2880
+                                       "height":  2880,
+                                       "capturedAt":  null
                                    },
-    "/images/Work photos/Fall td team lunch.jpg":  {
+    "/images/TD photos/Summer td mentoring conference.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/td-photos-summer-td-mentoring-conference-320.jpg",
+                                                                                      "width":  320
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/td-photos-summer-td-mentoring-conference-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/td-photos-summer-td-mentoring-conference-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  }
+                                                                              ],
+                                                                 "width":  1600,
+                                                                 "height":  1200,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/Mexico Playa Del carmen 2023/more beach.jpg":  {
+                                                                            "variants":  [
+                                                                                             {
+                                                                                                 "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-more-beach-640.jpg",
+                                                                                                 "width":  640
+                                                                                             }
+                                                                                         ],
+                                                                            "width":  1240,
+                                                                            "height":  2202,
+                                                                            "capturedAt":  null
+                                                                        },
+    "/images/Photography/China 2026/suzhoubundbuildings.jpg":  {
+                                                                   "variants":  [
+                                                                                    {
+                                                                                        "src":  "/images/optimized/photography-china-2026-suzhoubundbuildings-640.jpg",
+                                                                                        "width":  640
+                                                                                    },
+                                                                                    {
+                                                                                        "src":  "/images/optimized/photography-china-2026-suzhoubundbuildings-1280.jpg",
+                                                                                        "width":  1280
+                                                                                    },
+                                                                                    {
+                                                                                        "src":  "/images/optimized/photography-china-2026-suzhoubundbuildings-1920.jpg",
+                                                                                        "width":  1920
+                                                                                    }
+                                                                                ],
+                                                                   "width":  2160,
+                                                                   "height":  2880,
+                                                                   "capturedAt":  null
+                                                               },
+    "/images/Photography/China 2026/kangbuilding.jpg":  {
+                                                            "variants":  [
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-china-2026-kangbuilding-640.jpg",
+                                                                                 "width":  640
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-china-2026-kangbuilding-1280.jpg",
+                                                                                 "width":  1280
+                                                                             },
+                                                                             {
+                                                                                 "src":  "/images/optimized/photography-china-2026-kangbuilding-1920.jpg",
+                                                                                 "width":  1920
+                                                                             }
+                                                                         ],
+                                                            "width":  2160,
+                                                            "height":  3840,
+                                                            "capturedAt":  null
+                                                        },
+    "/images/Photography/US road trip 2026/canyon.jpg":  {
+                                                             "variants":  [
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-us-road-trip-2026-canyon-320.jpg",
+                                                                                  "width":  320
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-us-road-trip-2026-canyon-640.jpg",
+                                                                                  "width":  640
+                                                                              }
+                                                                          ],
+                                                             "width":  1242,
+                                                             "height":  2208,
+                                                             "capturedAt":  null
+                                                         },
+    "/images/Photography/China 2026/guilinroaddgos.jpg":  {
+                                                              "variants":  [
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-guilinroaddgos-640.jpg",
+                                                                                   "width":  640
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-guilinroaddgos-1280.jpg",
+                                                                                   "width":  1280
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-guilinroaddgos-1920.jpg",
+                                                                                   "width":  1920
+                                                                               }
+                                                                           ],
+                                                              "width":  2160,
+                                                              "height":  3840,
+                                                              "capturedAt":  null
+                                                          },
+    "/images/Photography/China 2026/friedfish.jpg":  {
+                                                         "variants":  [
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-china-2026-friedfish-320.jpg",
+                                                                              "width":  320
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-china-2026-friedfish-640.jpg",
+                                                                              "width":  640
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-china-2026-friedfish-1280.jpg",
+                                                                              "width":  1280
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-china-2026-friedfish-1920.jpg",
+                                                                              "width":  1920
+                                                                          }
+                                                                      ],
+                                                         "width":  2160,
+                                                         "height":  3840,
+                                                         "capturedAt":  null
+                                                     },
+    "/images/Photography/F1 Miami 2025/f1pink.jpg":  {
+                                                         "variants":  [
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-f1-miami-2025-f1pink-640.jpg",
+                                                                              "width":  640
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-f1-miami-2025-f1pink-1280.jpg",
+                                                                              "width":  1280
+                                                                          }
+                                                                      ],
+                                                         "width":  1536,
+                                                         "height":  2048,
+                                                         "capturedAt":  null
+                                                     },
+    "/images/Photography/China 2026/changchun farmers market.jpg":  {
+                                                                        "variants":  [
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-china-2026-changchun-farmers-market-320.jpg",
+                                                                                             "width":  320
+                                                                                         },
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-china-2026-changchun-farmers-market-640.jpg",
+                                                                                             "width":  640
+                                                                                         },
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-china-2026-changchun-farmers-market-1280.jpg",
+                                                                                             "width":  1280
+                                                                                         },
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-china-2026-changchun-farmers-market-1920.jpg",
+                                                                                             "width":  1920
+                                                                                         }
+                                                                                     ],
+                                                                        "width":  2160,
+                                                                        "height":  3840,
+                                                                        "capturedAt":  null
+                                                                    },
+    "/images/Photography/Carribean Cruise 2025/sdgdsg.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgdsg-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgdsg-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-carribean-cruise-2025-sdgdsg-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2160,
+                                                                 "height":  2880,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/Yodaguy museum/babyyodamodel.jpg":  {
+                                                                 "variants":  [
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-yodaguy-museum-babyyodamodel-640.jpg",
+                                                                                      "width":  640
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-yodaguy-museum-babyyodamodel-1280.jpg",
+                                                                                      "width":  1280
+                                                                                  },
+                                                                                  {
+                                                                                      "src":  "/images/optimized/photography-yodaguy-museum-babyyodamodel-1920.jpg",
+                                                                                      "width":  1920
+                                                                                  }
+                                                                              ],
+                                                                 "width":  2160,
+                                                                 "height":  2880,
+                                                                 "capturedAt":  null
+                                                             },
+    "/images/Photography/China 2026/shanghaistreet.jpg":  {
+                                                              "variants":  [
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaistreet-640.jpg",
+                                                                                   "width":  640
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaistreet-1280.jpg",
+                                                                                   "width":  1280
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaistreet-1920.jpg",
+                                                                                   "width":  1920
+                                                                               }
+                                                                           ],
+                                                              "width":  2160,
+                                                              "height":  3840,
+                                                              "capturedAt":  null
+                                                          },
+    "/images/Music/Remixprojectgrad.jpg":  {
+                                               "variants":  [
+                                                                {
+                                                                    "src":  "/images/optimized/music-remixprojectgrad-320.jpg",
+                                                                    "width":  320
+                                                                },
+                                                                {
+                                                                    "src":  "/images/optimized/music-remixprojectgrad-640.jpg",
+                                                                    "width":  640
+                                                                },
+                                                                {
+                                                                    "src":  "/images/optimized/music-remixprojectgrad-1280.jpg",
+                                                                    "width":  1280
+                                                                },
+                                                                {
+                                                                    "src":  "/images/optimized/music-remixprojectgrad-1920.jpg",
+                                                                    "width":  1920
+                                                                }
+                                                            ],
+                                               "width":  3240,
+                                               "height":  2160,
+                                               "capturedAt":  null
+                                           },
+    "/images/Photography/US road trip 2026/cave.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-cave-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-cave-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-cave-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  2880,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/Photography/Yodaguy museum/sig.jpg":  {
                                                        "variants":  [
                                                                         {
-                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-640.jpg",
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-sig-640.jpg",
                                                                             "width":  640
                                                                         },
                                                                         {
-                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-1280.jpg",
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-sig-1280.jpg",
                                                                             "width":  1280
                                                                         },
                                                                         {
-                                                                            "src":  "/images/optimized/work-photos-fall-td-team-lunch-1920.jpg",
+                                                                            "src":  "/images/optimized/photography-yodaguy-museum-sig-1920.jpg",
                                                                             "width":  1920
                                                                         }
                                                                     ],
-                                                       "width":  3072,
-                                                       "height":  4080
+                                                       "width":  2160,
+                                                       "height":  2880,
+                                                       "capturedAt":  null
                                                    },
-    "/images/ba1.png":  {
-                            "variants":  [
-                                             {
-                                                 "src":  "/images/optimized/ba1-640.jpg",
-                                                 "width":  640
-                                             }
-                                         ],
-                            "width":  1080,
-                            "height":  1352
-                        },
-    "/images/mexico.jpg":  {
-                               "variants":  [
-                                                {
-                                                    "src":  "/images/optimized/mexico-640.jpg",
-                                                    "width":  640
-                                                }
-                                            ],
-                               "width":  1240,
-                               "height":  2202
-                           },
-    "/images/Miami.jpg":  {
-                              "variants":  [
-                                               {
-                                                   "src":  "/images/optimized/miami-640.jpg",
-                                                   "width":  640
-                                               },
-                                               {
-                                                   "src":  "/images/optimized/miami-1280.jpg",
-                                                   "width":  1280
-                                               }
-                                           ],
-                              "width":  1536,
-                              "height":  2048
-                          }
+    "/images/Photography/China 2026/shanghaigarden.jpg":  {
+                                                              "variants":  [
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaigarden-640.jpg",
+                                                                                   "width":  640
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaigarden-1280.jpg",
+                                                                                   "width":  1280
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-shanghaigarden-1920.jpg",
+                                                                                   "width":  1920
+                                                                               }
+                                                                           ],
+                                                              "width":  2160,
+                                                              "height":  3840,
+                                                              "capturedAt":  null
+                                                          },
+    "/images/Photography/China 2026/gentlemonsterdog.jpg":  {
+                                                                "variants":  [
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-gentlemonsterdog-320.jpg",
+                                                                                     "width":  320
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-gentlemonsterdog-640.jpg",
+                                                                                     "width":  640
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-gentlemonsterdog-1280.jpg",
+                                                                                     "width":  1280
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-gentlemonsterdog-1920.jpg",
+                                                                                     "width":  1920
+                                                                                 }
+                                                                             ],
+                                                                "width":  2160,
+                                                                "height":  3840,
+                                                                "capturedAt":  null
+                                                            },
+    "/images/Photography/China 2026/bundotherside.jpg":  {
+                                                             "variants":  [
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-china-2026-bundotherside-320.jpg",
+                                                                                  "width":  320
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-china-2026-bundotherside-640.jpg",
+                                                                                  "width":  640
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-china-2026-bundotherside-1280.jpg",
+                                                                                  "width":  1280
+                                                                              },
+                                                                              {
+                                                                                  "src":  "/images/optimized/photography-china-2026-bundotherside-1920.jpg",
+                                                                                  "width":  1920
+                                                                              }
+                                                                          ],
+                                                             "width":  2160,
+                                                             "height":  3840,
+                                                             "capturedAt":  null
+                                                         },
+    "/images/Photography/Carribean Cruise 2025/sgSG.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-sgsg-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-sgsg-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-sgsg-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  2880,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/Yodaguy museum/models.jpg":  {
+                                                          "variants":  [
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-models-640.jpg",
+                                                                               "width":  640
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-models-1280.jpg",
+                                                                               "width":  1280
+                                                                           },
+                                                                           {
+                                                                               "src":  "/images/optimized/photography-yodaguy-museum-models-1920.jpg",
+                                                                               "width":  1920
+                                                                           }
+                                                                       ],
+                                                          "width":  2160,
+                                                          "height":  2880,
+                                                          "capturedAt":  null
+                                                      },
+    "/images/Photography/Carribean Cruise 2025/image.jpg":  {
+                                                                "variants":  [
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-image-640.jpg",
+                                                                                     "width":  640
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-image-1280.jpg",
+                                                                                     "width":  1280
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-carribean-cruise-2025-image-1920.jpg",
+                                                                                     "width":  1920
+                                                                                 }
+                                                                             ],
+                                                                "width":  2160,
+                                                                "height":  2880,
+                                                                "capturedAt":  null
+                                                            },
+    "/images/Photography/Yodaguy museum/vader.jpg":  {
+                                                         "variants":  [
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-yodaguy-museum-vader-640.jpg",
+                                                                              "width":  640
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-yodaguy-museum-vader-1280.jpg",
+                                                                              "width":  1280
+                                                                          },
+                                                                          {
+                                                                              "src":  "/images/optimized/photography-yodaguy-museum-vader-1920.jpg",
+                                                                              "width":  1920
+                                                                          }
+                                                                      ],
+                                                         "width":  2160,
+                                                         "height":  2880,
+                                                         "capturedAt":  null
+                                                     },
+    "/images/Photography/China 2026/gentlemonsterrobot.jpg":  {
+                                                                  "variants":  [
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-china-2026-gentlemonsterrobot-320.jpg",
+                                                                                       "width":  320
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-china-2026-gentlemonsterrobot-640.jpg",
+                                                                                       "width":  640
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-china-2026-gentlemonsterrobot-1280.jpg",
+                                                                                       "width":  1280
+                                                                                   },
+                                                                                   {
+                                                                                       "src":  "/images/optimized/photography-china-2026-gentlemonsterrobot-1920.jpg",
+                                                                                       "width":  1920
+                                                                                   }
+                                                                               ],
+                                                                  "width":  2160,
+                                                                  "height":  3840,
+                                                                  "capturedAt":  null
+                                                              },
+    "/images/Photography/Mexico Playa Del carmen 2023/mexico.jpg":  {
+                                                                        "variants":  [
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-mexico-320.jpg",
+                                                                                             "width":  320
+                                                                                         },
+                                                                                         {
+                                                                                             "src":  "/images/optimized/photography-mexico-playa-del-carmen-2023-mexico-640.jpg",
+                                                                                             "width":  640
+                                                                                         }
+                                                                                     ],
+                                                                        "width":  1240,
+                                                                        "height":  2202,
+                                                                        "capturedAt":  null
+                                                                    },
+    "/images/Photography/China 2026/changchunnight.jpg":  {
+                                                              "variants":  [
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-changchunnight-320.jpg",
+                                                                                   "width":  320
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-changchunnight-640.jpg",
+                                                                                   "width":  640
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-changchunnight-1280.jpg",
+                                                                                   "width":  1280
+                                                                               },
+                                                                               {
+                                                                                   "src":  "/images/optimized/photography-china-2026-changchunnight-1920.jpg",
+                                                                                   "width":  1920
+                                                                               }
+                                                                           ],
+                                                              "width":  2160,
+                                                              "height":  3840,
+                                                              "capturedAt":  null
+                                                          },
+    "/images/Photography/Carribean Cruise 2025/food.jpg":  {
+                                                               "variants":  [
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-food-640.jpg",
+                                                                                    "width":  640
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-food-1280.jpg",
+                                                                                    "width":  1280
+                                                                                },
+                                                                                {
+                                                                                    "src":  "/images/optimized/photography-carribean-cruise-2025-food-1920.jpg",
+                                                                                    "width":  1920
+                                                                                }
+                                                                            ],
+                                                               "width":  2160,
+                                                               "height":  2880,
+                                                               "capturedAt":  null
+                                                           },
+    "/images/Photography/China 2026/rivergreengarden.jpg":  {
+                                                                "variants":  [
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-rivergreengarden-640.jpg",
+                                                                                     "width":  640
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-rivergreengarden-1280.jpg",
+                                                                                     "width":  1280
+                                                                                 },
+                                                                                 {
+                                                                                     "src":  "/images/optimized/photography-china-2026-rivergreengarden-1920.jpg",
+                                                                                     "width":  1920
+                                                                                 }
+                                                                             ],
+                                                                "width":  2160,
+                                                                "height":  3840,
+                                                                "capturedAt":  null
+                                                            },
+    "/images/Photography/US road trip 2026/appalachiantrailsign.jpg":  {
+                                                                           "variants":  [
+                                                                                            {
+                                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-appalachiantrailsign-320.jpg",
+                                                                                                "width":  320
+                                                                                            },
+                                                                                            {
+                                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-appalachiantrailsign-640.jpg",
+                                                                                                "width":  640
+                                                                                            },
+                                                                                            {
+                                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-appalachiantrailsign-1280.jpg",
+                                                                                                "width":  1280
+                                                                                            },
+                                                                                            {
+                                                                                                "src":  "/images/optimized/photography-us-road-trip-2026-appalachiantrailsign-1920.jpg",
+                                                                                                "width":  1920
+                                                                                            }
+                                                                                        ],
+                                                                           "width":  2160,
+                                                                           "height":  2880,
+                                                                           "capturedAt":  null
+                                                                       },
+    "/images/Photography/China 2026/lildog.jpg":  {
+                                                      "variants":  [
+                                                                       {
+                                                                           "src":  "/images/optimized/photography-china-2026-lildog-640.jpg",
+                                                                           "width":  640
+                                                                       },
+                                                                       {
+                                                                           "src":  "/images/optimized/photography-china-2026-lildog-1280.jpg",
+                                                                           "width":  1280
+                                                                       },
+                                                                       {
+                                                                           "src":  "/images/optimized/photography-china-2026-lildog-1920.jpg",
+                                                                           "width":  1920
+                                                                       }
+                                                                   ],
+                                                      "width":  2160,
+                                                      "height":  3840,
+                                                      "capturedAt":  null
+                                                  },
+    "/images/Photography/China 2026/guilinroad2.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad2-320.jpg",
+                                                                                "width":  320
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad2-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad2-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-guilinroad2-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  3840,
+                                                           "capturedAt":  null
+                                                       },
+    "/images/Photography/China 2026/suhzouriver.jpg":  {
+                                                           "variants":  [
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suhzouriver-640.jpg",
+                                                                                "width":  640
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suhzouriver-1280.jpg",
+                                                                                "width":  1280
+                                                                            },
+                                                                            {
+                                                                                "src":  "/images/optimized/photography-china-2026-suhzouriver-1920.jpg",
+                                                                                "width":  1920
+                                                                            }
+                                                                        ],
+                                                           "width":  2160,
+                                                           "height":  3840,
+                                                           "capturedAt":  null
+                                                       }
 }

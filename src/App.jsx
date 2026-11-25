@@ -19,13 +19,13 @@ function RouteFocus(){
  useEffect(()=>{
    const timer=setTimeout(()=>{
      const target=hash?document.getElementById(decodeURIComponent(hash.slice(1))):null;
-     if(target)target.scrollIntoView({block:'start'});else window.scrollTo(0,0);
+     if(target)target.scrollIntoView({block:'start'});else {window.scrollTo(0,0);document.getElementById('main')?.scrollTo(0,0);}
      const heading=target?.querySelector('h1,h2')||document.querySelector('main h1');
      if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
      document.title='Eric Ren';
    },30);
    return ()=>clearTimeout(timer);
- },[pathname,hash]);
+ },[pathname]);
  return null;
 }
 function OutsideWork(){return <div className="outside-page"><Link to="/" className="back-link">&larr; Home</Link><h1 className="sr-only">More About Me</h1><Creative/></div>;}

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import photoLibrary from '../src/data/photoLibrary.js';
 import { writeFile } from 'node:fs/promises';
 import { connect } from './cdp.mjs';
 const c=await connect();
@@ -9,6 +10,7 @@ const delay=ms=>c.evaluate('new Promise(resolve=>setTimeout(resolve,'+ms+'))');
 const key=async key=>{const code={Escape:27,Enter:13,ArrowRight:39}[key];await c.send('Input.dispatchKeyEvent',{type:'keyDown',key,code:key,windowsVirtualKeyCode:code,nativeVirtualKeyCode:code});await c.send('Input.dispatchKeyEvent',{type:'keyUp',key,code:key,windowsVirtualKeyCode:code,nativeVirtualKeyCode:code});};
 const point=async selector=>c.evaluate('(()=>{const r=document.querySelector('+JSON.stringify(selector)+').getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2}})()');
 try{
+ await c.send('Page.addScriptToEvaluateOnNewDocument',{source:'const originalFetch=window.fetch.bind(window);window.fetch=(input,options)=>input==="/api/visit"?Promise.resolve(new Response("{}",{status:202})):originalFetch(input,options);'});
  await c.send('Runtime.enable');
  await c.send('Log.enable');
  await c.navigate(base);
@@ -19,7 +21,7 @@ try{
   check('No homepage overflow '+width,await c.evaluate('document.documentElement.scrollWidth<=innerWidth+1'));
   await c.wait('[...document.querySelectorAll(".contact-frame img")].every(i=>i.complete&&i.naturalWidth>0)');
   check('All photo assets loaded '+width,await c.evaluate('[...document.querySelectorAll(".contact-frame img")].every(i=>i.complete&&i.naturalWidth>0)'));
-  check('Compact home with 12 distinct photos '+width,await c.evaluate('document.querySelectorAll(".contact-tile").length===12 && new Set([...document.querySelectorAll(".contact-tile img")].map(i=>i.src)).size===12'));
+  check('Compact home with 20 distinct photos '+width,await c.evaluate('document.querySelectorAll(".contact-tile").length===20 && new Set([...document.querySelectorAll(".contact-tile img")].map(i=>i.src)).size===20'));
   check('No full-width professional sections '+width,await c.evaluate('!document.querySelector(".role-detail,.secondary-project") && document.querySelectorAll(".index-section").length===2'));
   if(width>=1024)check('Home fits one viewport '+width,await c.evaluate('document.documentElement.scrollHeight<=innerHeight+2'));
   await c.screenshot('.qa/editorial-home-'+width+'.png');
@@ -61,7 +63,7 @@ try{
  await c.evaluate('document.querySelector(".contact-canvas").focus()');await c.wait('!!document.querySelector(".is-ready")');
  check('Keyboard focus assembles collage',true);
  await c.evaluate('document.querySelector(".contact-canvas").click()');await c.wait('location.pathname==="/more-about-me"');
- check('Collage opens existing personal gallery',await c.evaluate('document.querySelectorAll(".trip-folder").length===4'));
+ check('Collage opens existing personal gallery',await c.evaluate('document.querySelectorAll(".trip-folder").length===6'));
  for(const width of [1440,390,320]){
   await c.viewport(width,900);
   for(const tab of ['travel','music','fitness']){
@@ -70,13 +72,13 @@ try{
   }
  }
  await c.evaluate('document.querySelector("#off-clock-tab-music").click()');
- check('Music images and supplied achievements preserved',await c.evaluate('document.querySelectorAll(".scatter-image").length===3 && document.querySelector(".off-clock-blurb").textContent.includes("$20,000")'));
+ check('Music images and supplied achievements preserved',await c.evaluate('document.querySelectorAll(".scatter-image").length==='+photoLibrary.musicPhotos.length+' && document.querySelector(".off-clock-blurb").textContent.includes("$20,000")'));
  await c.evaluate('document.querySelector(".zoom-photo").click()');await c.wait('document.querySelector(".image-viewer").open');
  check('Personal photo viewer works',await c.evaluate('!document.querySelector(".image-viewer-footer button")'));
  await key('Escape');await c.wait('!document.querySelector(".image-viewer").open && !document.querySelector(".image-viewer-panel")');
  await c.evaluate('document.querySelector("#off-clock-tab-travel").click()');
- await c.wait('!!document.querySelector("#album-eastern-caribbean-2025")');
- await c.evaluate('document.querySelector("#album-eastern-caribbean-2025").click()');
+ await c.wait('!!document.querySelector("#album-caribbean-cruise-2025")');
+ await c.evaluate('document.querySelector("#album-caribbean-cruise-2025").click()');
  await c.wait('!!document.querySelector(".trip-gallery .zoom-photo")');
  await c.evaluate('document.querySelector(".trip-gallery .zoom-photo").click()');await c.wait('document.querySelector(".image-viewer").open');
  check('Photography albums retain browsing',await c.evaluate('document.querySelectorAll(".image-viewer-footer button").length===2'));

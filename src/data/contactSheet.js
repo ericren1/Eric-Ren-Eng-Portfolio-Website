@@ -1,20 +1,24 @@
-import { travelPhotos, creativeCollections } from './creative.js';
+import { travelPhotos, travelTrips, creativeCollections } from './creative.js';
 import { workPhotos } from './workPhotos.js';
 
 // Dates come from Eric's album names and internship seasons, never file order.
 // Unknown dates stay null and follow dated images in an explicit curated order.
-export const contactSheetConfig = { count: 25, pinned: ['/images/about me photo.jpg'], excluded: [], order: [] };
+const music = creativeCollections[1].photos.filter(photo => !photo.graphic && !photo.excludeFromCollage);
+const sports = creativeCollections[2].photos;
+const work = [workPhotos.fallLunch, workPhotos.summerConference, workPhotos.fallSpeedMentoring];
+const curatedOrder = Array.from({length:3},(_,round)=>[
+  work[round], music[round], sports[round],
+  ...(round<2 ? travelTrips.slice(0,round===0?6:4).map(trip=>trip.photos[round]) : []),
+]).flat().filter(Boolean).map(photo=>photo.src);
+export const contactSheetConfig = { count: 20, pinned: ['/images/about me photo.jpg'], excluded: [], order: curatedOrder };
 export const photoArchive = [
   { src: '/images/about me photo.jpg', alt: 'Portrait of Eric Ren', date: null },
   { ...workPhotos.fallLunch, date: '2026-10-08', dateSource: 'EXIF DateTimeOriginal: 2026:10:08 13:53:17' },
   { ...workPhotos.fallSpeedMentoring, date: '2026-09', dateSource: 'Fall 2026 internship' },
-  { ...travelPhotos[0], date: '2026-08', dateSource: 'China / August 2026 album' },
   { ...workPhotos.summerConference, date: '2026-05', dateSource: 'Summer 2026 internship' },
-  { ...travelPhotos[2], date: '2025', dateSource: 'F1 Miami 2025 album' },
-  { ...travelPhotos[3], date: '2025', dateSource: 'Eastern Caribbean 2025 album' },
-  { ...travelPhotos[4], date: '2025', dateSource: 'Eastern Caribbean 2025 album' },
-  { ...travelPhotos[1], date: '2023', dateSource: 'Mexico 2023 album' },
-  ...[creativeCollections[1].photos[0], ...creativeCollections[2].photos].map(photo => ({ ...photo, date: null })),
+  ...travelPhotos,
+  ...creativeCollections[1].photos.filter(photo => !photo.graphic && !photo.excludeFromCollage),
+  ...creativeCollections[2].photos,
 ];
 export function selectContactPhotos(config = contactSheetConfig) {
   const rank = photo => config.order.indexOf(photo.src);
