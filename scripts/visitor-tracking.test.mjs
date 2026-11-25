@@ -98,3 +98,25 @@ test('Discord errors and rejected network requests do not reject background task
     mock.mock.restore();
   }
 });
+
+test('Excluded IPv4 and equivalent IPv6 addresses never send notifications', async t => {
+  const fetch = t.mock.method(globalThis, 'fetch', async () => { throw new Error('Unexpected outbound request'); });
+  const env = { DISCORD_WEBHOOK_URL: webhook, IGNORED_VISITOR_IPS: ' 203.0.113.42, 2001:db8::42 ' };
+  for (const ip of ['203.0.113.42', '2001:0DB8:0000:0000:0000:0000:0000:0042']) {
+    const { response, tasks } = await visit(request(undefined, { 'CF-Connecting-IP': ip }), env);
+    assert.equal(response.status, 202);
+    assert.deepEqual(await response.json(), { success: true });
+    assert.equal(tasks.length, 0);
+  }
+  assert.equal(fetch.mock.callCount(), 0);
+});
+
+test('IP exclusions do not suppress other visitors or trust forwarded headers', async t => {
+  const fetch = t.mock.method(globalThis, 'fetch', async () => new Response(null, { status: 204 }));
+  const { response, tasks } = await visit(request(undefined, {
+    'CF-Connecting-IP': '203.0.113.43', 'X-Forwarded-For': '203.0.113.42',
+  }), { DISCORD_WEBHOOK_URL: webhook, IGNORED_VISITOR_IPS: '203.0.113.42' });
+  assert.equal(response.status, 202);
+  assert.equal(tasks.length, 1);
+  assert.equal(fetch.mock.callCount(), 1);
+});

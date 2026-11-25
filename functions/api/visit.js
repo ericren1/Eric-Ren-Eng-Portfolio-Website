@@ -6,6 +6,15 @@ const json = (body, status = 200, headers = {}) => new Response(JSON.stringify(b
 const field = (value, fallback = 'Unknown') =>
   (typeof value === 'string' ? value.replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, 1024) : '') || fallback;
 
+function normalizeIP(value) {
+  const ip = (value || '').trim().toLowerCase();
+  try {
+    return ip.includes(':') ? new URL('http://[' + ip + ']').hostname : ip;
+  } catch {
+    return ip;
+  }
+}
+
 async function readPayload(request) {
   const reader = request.body?.getReader();
   if (!reader) throw new SyntaxError();
@@ -67,6 +76,9 @@ export async function onRequest(context) {
       payload.page.startsWith('//') || typeof payload.referrer !== 'string') {
     return json({ success: false }, 400);
   }
+  const ip = request.headers.get('CF-Connecting-IP');
+  const ignoredIPs = (env.IGNORED_VISITOR_IPS || '').split(',').map(normalizeIP).filter(Boolean);
+  if (ip && ignoredIPs.includes(normalizeIP(ip))) return json({ success: true }, 202);
   if (!env.DISCORD_WEBHOOK_URL) return json({ success: false }, 503);
 
   const timestamp = new Date().toISOString();
@@ -75,7 +87,7 @@ export async function onRequest(context) {
     color: 0x626b50,
     fields: [
       { name: 'Page', value: field(payload.page), inline: false },
-      { name: 'IP address', value: field(request.headers.get('CF-Connecting-IP')), inline: true },
+      { name: 'IP address', value: field(ip), inline: true },
       { name: 'Country', value: field(request.headers.get('CF-IPCountry')), inline: true },
       { name: 'Referrer', value: field(payload.referrer, 'Direct visit'), inline: false },
       { name: 'User agent', value: field(request.headers.get('User-Agent')), inline: false },
