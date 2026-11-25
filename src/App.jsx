@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import ImageViewer from './components/ImageViewer';
+import VisitorTracker from './components/VisitorTracker';
 import Creative from './pages/Creative';
 import { profile } from './data/profile';
 import { EditorialHome, ExperienceIndex, CompanyExperience, FeaturedProject, MoreProjects, NotFound, SocialIcon } from './pages/Editorial';
@@ -33,7 +34,7 @@ function Root(){const {hash}=useLocation();if(hash.startsWith('#project-'))retur
 export default function App(){
  const [theme,setTheme]=useState(()=>{try{return localStorage.getItem('portfolio-theme')==='dark'?'dark':'light';}catch{return 'light';}});
  useEffect(()=>{document.documentElement.dataset.theme=theme;try{localStorage.setItem('portfolio-theme',theme);}catch{}document.querySelector('meta[name="theme-color"]')?.setAttribute('content',theme==='light'?'#E8E5DD':'#252622');},[theme]);
- return <ImageViewer><Header theme={theme} toggle={()=>setTheme(value=>value==='light'?'dark':'light')}/><RouteFocus/><main id="main"><Routes>
+ return <ImageViewer><VisitorTracker/><Header theme={theme} toggle={()=>setTheme(value=>value==='light'?'dark':'light')}/><RouteFocus/><main id="main"><Routes>
  <Route path="/" element={<Root/>}/><Route path="/experience" element={<ExperienceIndex/>}/><Route path="/experience/:companySlug" element={<CompanyExperience/>}/><Route path="/projects/:projectSlug" element={<FeaturedProject/>}/><Route path="/more-projects" element={<MoreProjects/>}/><Route path="/projects" element={<Navigate to="/more-projects" replace/>}/><Route path="/more-about-me" element={<OutsideWork/>}/><Route path="/creative/:category" element={<LegacyCreative/>}/><Route path="/off-the-clock/:category" element={<LegacyCreative/>}/>{['creative','off-the-clock','about'].map(path=><Route key={path} path={'/'+path} element={<Navigate to="/more-about-me" replace/>}/>)}<Route path="*" element={<NotFound/>}/>
  </Routes></main><PersistentContact/></ImageViewer>;
 }
