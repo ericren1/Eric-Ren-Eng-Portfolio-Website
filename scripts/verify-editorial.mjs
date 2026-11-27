@@ -83,7 +83,7 @@ try{
  await c.evaluate('document.querySelector(".trip-gallery .zoom-photo").click()');await c.wait('document.querySelector(".image-viewer").open');
  check('Photography albums retain browsing',await c.evaluate('document.querySelectorAll(".image-viewer-footer button").length===2'));
  await key('Escape');await c.wait('!document.querySelector(".image-viewer").open && !document.querySelector(".image-viewer-panel")');
- for(const [route,heading] of [['/experience/td-securities','TD Securities'],['/experience/romaeris','Romaeris Corporation'],['/experience/ldrs','LDRS Investments'],['/experience/unity-health','Unity Health Toronto'],['/projects/url-shortener','URL Shortener'],['/projects/ai-personal-scheduler','AI Personal Scheduler'],['/projects/ai-exercise-form-tracker','AI Exercise Form Tracker'],['/more-projects','More Projects']]){
+ for(const [route,heading] of [['/experience/td-securities','TD Securities'],['/experience/romaeris','Romaeris Corporation'],['/experience/ldrs','LDRS Investments'],['/privacy','Visitor privacy'],['/projects/url-shortener','URL Shortener'],['/projects/ai-personal-scheduler','AI Personal Scheduler'],['/projects/ai-exercise-form-tracker','AI Exercise Form Tracker'],['/more-projects','More Projects']]){
   await c.navigate(base+route);
   check('Dedicated detail route '+route,await c.evaluate('document.querySelector("h1").textContent.includes('+JSON.stringify(heading)+')'));
   check('Detail responsive '+route,await c.evaluate('document.documentElement.scrollWidth<=innerWidth+1'));

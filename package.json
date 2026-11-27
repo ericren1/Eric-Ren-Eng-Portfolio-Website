@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test scripts/content.test.mjs scripts/contact-sheet.test.mjs",
+    "test": "node --test scripts/content.test.mjs scripts/contact-sheet.test.mjs scripts/visitor.test.mjs",
     "test:browser": "node scripts/verify-editorial.mjs"
   },
   "dependencies": {
