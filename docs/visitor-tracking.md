@@ -26,7 +26,7 @@ Configure production and preview separately if needed. Without the webhook, the 
 
 Only the secret Discord webhook receives an external request. Raw IPs are used temporarily in server memory for exclusion and spam checks; Discord receives only the masked version. Query strings and fragments are omitted, referrers are reduced to website origin, and raw user agents are replaced with readable labels. Maps is not contacted during tracking: the link contains city-level location text only and opens when clicked by the notification recipient.
 
-The homepage links to `/privacy`. Discord notifications remain in the owner's private channel until manually deleted; the site does not automatically expire them. Restrict channel access and delete older notifications regularly. Cloudflare and Discord processing is subject to their respective policies.
+Discord notifications remain in the owner's private channel until manually deleted; the site does not automatically expire them. Restrict channel access and delete older notifications regularly. Cloudflare and Discord processing is subject to their respective policies.
 
 ## Verification
 

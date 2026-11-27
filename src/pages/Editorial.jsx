@@ -17,7 +17,7 @@ export function EditorialHome({themeControl}){
    <section className="introduction"><div className="intro-heading"><h1><Link className="signature" to="/" aria-label="Eric Ren, home">Eric Ren</Link></h1>{themeControl}</div><p className="degree">Computer Engineering @ TMU</p><p>I like building useful software, exploring AI, and making things of my own. Away from the screen, you&rsquo;ll find me making music, traveling, or getting a workout in.</p></section>
    <section className="index-section" aria-labelledby="index-experience"><h2 id="index-experience">Experience</h2><div className="index-links">
     {Object.entries(companySlugs).slice(0,3).map(([slug,name])=><Link to={'/experience/'+slug} key={slug}>{name}<Arrow/></Link>)}
-   </div><Link className="all-experience" to="/experience">All experience <Arrow/></Link><Link className="all-experience" to="/privacy">Visitor privacy</Link></section>
+   </div><Link className="all-experience" to="/experience">All experience <Arrow/></Link></section>
    <section className="index-section" aria-labelledby="index-projects"><h2 id="index-projects">Projects</h2><div className="index-links">{featuredSlugs.map(slug=>{const project=projects.find(p=>p.slug===slug);return <Link key={slug} to={'/projects/'+slug}>{slug==='url-shortener'?'URL Shortener & Analytics':project.title}<Arrow/></Link>;})}<Link to="/more-projects">More Projects<Arrow/></Link></div></section>
  </div><HomeCollage/></div>;
 }
