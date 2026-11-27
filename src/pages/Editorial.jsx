@@ -3,7 +3,7 @@ import HomeCollage from '../components/HomeCollage';
 import Photo from '../components/Photo';
 import CompanyLogo from '../components/CompanyLogo';
 import { experiences } from '../data/experience';
-import { projects, otherProjects } from '../data/projects';
+import { projects, otherProjects, projectSummaries } from '../data/projects';
 
 export const featuredSlugs=['url-shortener','ai-personal-scheduler','ai-exercise-form-tracker'];
 export const companySlugs={'td-securities':'TD Securities',romaeris:'Romaeris Corporation',ldrs:'LDRS Investments'};
@@ -43,17 +43,16 @@ export function FeaturedProject(){
  const {projectSlug}=useParams();
  const project=projects.find(item=>item.slug===projectSlug);
  if(!project)return <NotFound/>;
- return <div className="reading-page project-detail"><Back/><header className="page-intro"><span className="eyebrow">{project.type}</span><h1>{project.title}</h1>{project.stage!=='built'&&<p className="project-state">{project.stage==='planned'?'Planned':'In progress'}</p>}<p>{project.description}</p>{project.github&&<a className="text-link" href={project.github} target="_blank" rel="noreferrer">Repository <Arrow/></a>}</header>
- {project.tech.length>0&&<Stack items={project.tech}/>} {project.plannedTech&&<Stack items={project.plannedTech} label="Planned technologies"/>}
+ const summary=projectSummaries[projectSlug];
+ return <div className="reading-page project-detail"><Back/><header className="page-intro"><h1>{project.title}</h1>{project.stage!=='built'&&<p className="project-state">{project.stage==='planned'?'Planned':'In progress'}</p>}<p>{summary.description}</p>{project.github&&<a className="text-link" href={project.github} target="_blank" rel="noreferrer">GitHub repository <Arrow/></a>}</header>
+ <Stack items={project.tech.length?project.tech:project.plannedTech} label={project.stage==='planned'?'Planned tech stack':'Tech stack'}/>
  {project.visual&&<figure className="project-screenshot"><Photo {...project.visual}/><figcaption>{project.visual.caption}</figcaption></figure>}
- <section className="detail-section"><h2>{project.stage==='planned'?'Planned scope':'What it does'}</h2><ul>{project.bullets.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></section>
- {[['The problem',project.problem],['Technical approach',project.architecture],['Engineering challenges',project.challenges],['Results & current scope',project.results],['Next steps',project.future]].filter(([,text])=>text).map(([title,text])=><section className="detail-section" key={title}><h2>{title}</h2><p>{text}</p></section>)}
- {project.decisions&&<section className="detail-section"><h2>Design decisions</h2>{project.decisions.map(([title,text])=><div className="decision" key={title}><h3>{title}</h3><p>{text}</p></div>)}</section>}
+ <section className="detail-section"><h2>{project.stage==='planned'?'Planned scope':'Highlights'}</h2><ul>{summary.highlights.map(bullet=><li key={bullet}>{bullet}</li>)}</ul></section>
  <nav className="project-next" aria-label="Other projects">{featuredSlugs.filter(slug=>slug!==projectSlug).map(slug=><Link key={slug} to={'/projects/'+slug}>{projects.find(p=>p.slug===slug).title}<Arrow/></Link>)}<Link to="/more-projects">More Projects<Arrow/></Link></nav>
  </div>;
 }
 export function MoreProjects(){
  const secondary=[...projects.filter(p=>!featuredSlugs.includes(p.slug)),...otherProjects];
- return <div className="reading-page more-projects"><Back/><header className="page-intro"><span className="eyebrow">Experiments & other builds</span><h1>More Projects</h1></header>{secondary.map(project=><section className="secondary-project" key={project.title}><h2>{project.title}</h2>{project.stage==='planned'&&<p className="project-state">Planned scope</p>}<ul>{(project.bullets?(project.bullets.length>4?[...project.bullets.slice(0,3),project.bullets.slice(3).join(' ')]:project.bullets):[project.description,'Technical focus: '+project.field.toLowerCase()+'.']).map(text=><li key={text}>{text}</li>)}</ul><p className="secondary">{Array.isArray(project.tech)?(project.tech.length?project.tech:project.plannedTech).join(' / '):project.tech}</p></section>)}</div>;
+ return <div className="reading-page more-projects"><Back/><header className="page-intro"><h1>More Projects</h1></header>{secondary.map(project=>{const summary=projectSummaries[project.slug];return <section className="secondary-project" key={project.title}><h2>{project.title}</h2>{project.stage==='planned'&&<p className="project-state">Planned</p>}<p className="secondary">{summary?.description||project.description}</p><Stack items={Array.isArray(project.tech)?(project.tech.length?project.tech:project.plannedTech):project.tech.split(' · ')} label={project.stage==='planned'?'Planned tech stack':'Tech stack'}/>{summary&&<ul>{summary.highlights.map(text=><li key={text}>{text}</li>)}</ul>}{project.github&&<a className="text-link" href={project.github} target="_blank" rel="noreferrer">GitHub repository <Arrow/></a>}</section>;})}</div>;
 }
 export function NotFound(){return <div className="reading-page"><Back/><h1>That page isn&rsquo;t here.</h1><p>Head home to find the work and personal archive.</p></div>;}

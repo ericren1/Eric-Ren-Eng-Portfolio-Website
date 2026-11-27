@@ -223,6 +223,40 @@ export const projects = [
     ]
   }
 ];
+export const projectSummaries = {
+  'url-shortener': {
+    description: 'A REST API for creating short links, redirecting URLs, and tracking clicks.',
+    highlights: [
+      'Built Base62 short links with PostgreSQL storage, Redis caching, and per-link click analytics.',
+      'Local k6 tests reached 3,109 requests/second with zero failed requests. Cache hits delivered 19% higher throughput and 42% lower p99 latency than the tested cache-miss baseline.',
+      'Each benchmark used 10 virtual users and 50,000 measured iterations. These are local test results, not production capacity figures.',
+    ],
+  },
+  'ai-personal-scheduler': {
+    description: 'A weekly planner for viewing calendar events, task sessions, and unscheduled tasks.',
+    highlights: [
+      'Built a read-only React/TypeScript interface with week navigation and adjustable visible hours, using local sample data.',
+      'Automatic scheduling, Google Calendar integration, persistent storage, and LLM tools are planned; they are not implemented yet.',
+    ],
+  },
+  'ai-exercise-form-tracker': {
+    description: 'A local video-analysis prototype for shoulder-press movements.',
+    highlights: [
+      'Extracts MediaPipe pose landmarks, filters low-visibility points, and calculates joint angles with OpenCV overlays.',
+      'Classifies each frame as bottom, top, transitioning, or unknown. Includes geometry and classifier test files.',
+      'Rep counting, form assessment, and web/iOS apps are planned. No validated accuracy or latency benchmark is published.',
+    ],
+  },
+  'ai-video-editor-agent': {
+    description: 'A planned tool for turning raw footage and editing instructions into an edit plan.',
+    highlights: ['Planned: transcribe footage, identify highlights and pauses, and apply supported edits through FFmpeg.'],
+  },
+  'ai-job-application-agent': {
+    description: 'A planned assistant for finding relevant jobs and preparing applications.',
+    highlights: ['Planned: match postings to a candidate profile, draft responses, and track applications. Submissions would require user review and approval.'],
+  },
+};
+
 export const otherProjects = [
   {
     "title": "Traffic Intersection Detection",
